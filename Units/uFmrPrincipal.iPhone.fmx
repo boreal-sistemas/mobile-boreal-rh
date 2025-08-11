@@ -1,0 +1,358 @@
+inherited fmrPrincipal_iPhone: TfmrPrincipal_iPhone
+  ClientHeight = 460
+  ClientWidth = 320
+  DesignerMasterStyle = 2
+  inherited recCabecalho: TRectangle
+    Size.Width = 320.000000000000000000
+    inherited imgPlaca: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+      Position.X = 262.000000000000000000
+    end
+    inherited labOlaPessoa: TLabel
+      Size.Width = 184.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+    end
+    inherited imgSair: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+      Position.X = 204.000000000000000000
+    end
+  end
+  inherited recFooter: TRectangle
+    Position.Y = 395.000000000000000000
+    Size.Width = 320.000000000000000000
+    inherited recChat: TRectangle
+      inherited imgChat: TImage
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+      end
+    end
+    inherited recDados: TRectangle
+      inherited imgDados: TImage
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+      end
+    end
+    inherited recHistorico: TRectangle
+      inherited imgHistorico: TImage
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+      end
+    end
+    inherited recHome: TRectangle
+      inherited imgHome: TImage
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+      end
+    end
+    inherited recAjuste: TRectangle
+      inherited imgAjuste: TImage
+        MultiResBitmap.Height = 24
+        MultiResBitmap.Width = 24
+      end
+    end
+  end
+  inherited recPrincipal: TRectangle
+    Size.Width = 320.000000000000000000
+    Size.Height = 308.000000000000000000
+    inherited tcoPrincipal: TTabControl
+      Size.Width = 310.000000000000000000
+      Size.Height = 298.000000000000000000
+      Sizes = (
+        310s
+        298s
+        310s
+        298s
+        310s
+        298s
+        310s
+        298s
+        310s
+        298s)
+      inherited titHome: TTabItem
+        Size.Width = 11.000000000000000000
+        Size.Height = 11.000000000000000000
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited recEventosJornada: TRectangle
+          Size.Width = 310.000000000000000000
+          Size.Height = 298.000000000000000000
+        end
+        inherited recPlaca: TRectangle
+          Size.Width = 310.000000000000000000
+          Size.Height = 298.000000000000000000
+          inherited rreEditPlaca: TRoundRect
+            Size.Width = 298.000000000000000000
+            inherited cboVeiPlaca: TEdit
+              Size.Width = 268.000000000000000000
+            end
+          end
+          inherited rrePlaca: TRoundRect
+            Size.Width = 298.000000000000000000
+            inherited labPlaca: TLabel
+              Size.Width = 298.000000000000000000
+            end
+          end
+          inherited Label5: TLabel
+            Size.Width = 290.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited RoundRect2: TRoundRect
+            Size.Width = 298.000000000000000000
+            inherited Label6: TLabel
+              Size.Width = 298.000000000000000000
+            end
+          end
+        end
+        inherited recPernoite: TRectangle
+          Size.Width = 310.000000000000000000
+          Size.Height = 298.000000000000000000
+          inherited Image2: TImage
+            MultiResBitmap.Height = 36
+            MultiResBitmap.Width = 36
+            Size.Width = 310.000000000000000000
+          end
+          inherited Label4: TLabel
+            Size.Width = 270.000000000000000000
+            Size.Height = 118.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited recEsperar: TRoundRect
+            Position.Y = 166.000000000000000000
+            Size.Width = 298.000000000000000000
+            inherited labEsperar: TLabel
+              Size.Width = 298.000000000000000000
+            end
+          end
+          inherited recAceitarPenoite: TRoundRect
+            Position.Y = 226.000000000000000000
+            Size.Width = 298.000000000000000000
+            inherited labAceitarPernoite: TLabel
+              Size.Width = 298.000000000000000000
+            end
+          end
+        end
+        inherited recNovaMensagem: TRectangle
+          inherited labNovaMensagem: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited Image4: TImage
+            MultiResBitmap.Height = 48
+            MultiResBitmap.Width = 48
+          end
+        end
+      end
+      inherited titHistorico: TTabItem
+        Size.Width = 11.000000000000000000
+        Size.Height = 11.000000000000000000
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited vsbHistorico: TVertScrollBox
+          Size.Width = 304.000000000000000000
+          Size.Height = 227.000000000000000000
+          Viewport.Width = 352.000000000000000000
+          Viewport.Height = 262.000000000000000000
+        end
+        inherited labHistoricoTitulo: TLabel
+          Size.Width = 310.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited Image8: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+        end
+      end
+      inherited titDados: TTabItem
+        Size.Width = 11.000000000000000000
+        Size.Height = 11.000000000000000000
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited labMeusDadosTitulo: TLabel
+          Size.Width = 310.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited Image7: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+        end
+        inherited vsbMeusDados: TVertScrollBox
+          Size.Width = 304.000000000000000000
+          Size.Height = 227.000000000000000000
+          Viewport.Width = 299.000000000000000000
+          Viewport.Height = 227.000000000000000000
+          inherited recFuncionario: TRectangle
+            Size.Width = 299.000000000000000000
+            inherited recCarDescricao: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitCargo: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labCarDescricao: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFilCNPJ: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitCNPJ: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFilCNPJ: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFilDescricao: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitEmpresa: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFilDescricao: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFilInscricaoEstadual: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitIncricaoEstadual: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFilInscricaoEstadual: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFilRazaoSocial: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitRazaoSocial: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFilRazaoSocial: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFunCPF: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitCPF: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFunCPF: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFunNome: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labTitNome: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labFunNome: TLabel
+                Size.Width = 289.000000000000000000
+              end
+            end
+            inherited recFilIdentificao: TRectangle
+              Size.Width = 299.000000000000000000
+              inherited labIdentificacaoTitulo: TLabel
+                Size.Width = 289.000000000000000000
+                TextSettings.Font.StyleExt = {00070000000000000004000000}
+              end
+              inherited labIdentificacao: TLabel
+                Size.Width = 209.000000000000000000
+              end
+              inherited btnIdentificacao: TButton
+                Position.X = 229.000000000000000000
+              end
+            end
+          end
+        end
+      end
+      inherited titChat: TTabItem
+        Size.Width = 11.000000000000000000
+        Size.Height = 11.000000000000000000
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited vsbAdvertencia: TVertScrollBox
+          Size.Width = 304.000000000000000000
+          Size.Height = 227.000000000000000000
+          Viewport.Width = 304.000000000000000000
+          Viewport.Height = 227.000000000000000000
+        end
+        inherited labAdvertencia: TLabel
+          Size.Width = 310.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          inherited Image6: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+        end
+      end
+      inherited titAjuste: TTabItem
+        Size.Width = 11.000000000000000000
+        Size.Height = 11.000000000000000000
+        ExplicitSize.cx = 8.000000000000000000
+        ExplicitSize.cy = 8.000000000000000000
+        inherited recJornadaAjuste: TRectangle
+          Size.Width = 310.000000000000000000
+          Size.Height = 298.000000000000000000
+        end
+        inherited panDataHora: TRectangle
+          Size.Width = 310.000000000000000000
+          Size.Height = 298.000000000000000000
+          inherited dedData: TDateEdit
+            Size.Width = 270.000000000000000000
+          end
+          inherited Label1: TLabel
+            Size.Width = 290.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited Label2: TLabel
+            Size.Width = 290.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited labEvento: TLabel
+            Size.Width = 290.000000000000000000
+            TextSettings.Font.Size = 20.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited tedHora: TTimeEdit
+            Size.Width = 270.000000000000000000
+            Size.Height = 30.000000000000000000
+          end
+          inherited btnCancelar: TRoundRect
+            Position.Y = 298.000000000000000000
+            Size.Width = 270.000000000000000000
+          end
+          inherited btnAjuste: TRoundRect
+            Position.Y = 245.000000000000000000
+            Size.Width = 270.000000000000000000
+          end
+        end
+      end
+    end
+    inherited Image1: TImage
+      MultiResBitmap.Height = 435
+      MultiResBitmap.Width = 429
+      MultiResBitmap.TransparentColor = 0
+      Size.Width = 320.000000000000000000
+      Size.Height = 308.000000000000000000
+    end
+  end
+  inherited recData: TRectangle
+    Size.Width = 320.000000000000000000
+    inherited labDataPorExtenso: TLabel
+      Size.Width = 310.000000000000000000
+    end
+  end
+  inherited recConfirmar: TRectangle
+    inherited Image3: TImage
+      MultiResBitmap.Height = 48
+      MultiResBitmap.Width = 48
+    end
+    inherited Label11: TLabel
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+    end
+  end
+end
