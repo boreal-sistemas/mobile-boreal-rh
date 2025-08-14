@@ -270,8 +270,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
-        <VerInfo_Build>537</VerInfo_Build>
-        <VerInfo_Keys>package=com.boreal.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=537;versionName=537;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
+        <VerInfo_Build>538</VerInfo_Build>
+        <VerInfo_Keys>package=com.boreal.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=538;versionName=538;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <DCC_ExeOutput>..\Release\32\</DCC_ExeOutput>
         <DCC_DcuOutput>.\dcu32</DCC_DcuOutput>
@@ -296,8 +296,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
-        <VerInfo_Build>537</VerInfo_Build>
-        <VerInfo_Keys>package=com.boreal.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=537;versionName=537;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
+        <VerInfo_Build>538</VerInfo_Build>
+        <VerInfo_Keys>package=com.boreal.$(MSBuildProjectName);label=$(MSBuildProjectName);versionCode=538;versionName=538;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_ExeOutput>..\Release\64\</DCC_ExeOutput>
         <DCC_DcuOutput>.\dcu64</DCC_DcuOutput>
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>

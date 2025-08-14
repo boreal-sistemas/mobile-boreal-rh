@@ -3247,6 +3247,7 @@ begin
     procedure()
     begin
       CarregarHistorico;
+      UltimoEvento;
       Carregar(False);
     end);
   end).Start;
