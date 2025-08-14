@@ -178,6 +178,8 @@ type
     recReenviarTodos: TRectangle;
     labReenviarTodosTitulo: TLabel;
     labReenviarTodosEventos: TLabel;
+    rreSincronizar: TRoundRect;
+    labSincronizar: TLabel;
   procedure FormCreate(Sender: TObject);
   procedure TimerTimer(Sender: TObject);
   procedure Clicar(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -202,7 +204,6 @@ type
   procedure AddMensagemListview(pEvento, pLinha1, pLinha2: string; imgH: TBitmap);
   procedure btnNaoSeiLigarClick(Sender: TObject);
   procedure tcoPrincipalChange(Sender: TObject);
-  procedure rreReenviarEventosClick(Sender: TObject);
   procedure btnAjusteClick(Sender: TObject);
     procedure sboPlacaFilter(Sender: TObject; const AFilter, AValue: string;
       var Accept: Boolean);
@@ -235,6 +236,7 @@ type
     procedure recLimparCacheClick(Sender: TObject);
     procedure rreAtualizarPlacaClick(Sender: TObject);
     procedure recReenviarTodosClick(Sender: TObject);
+    procedure rreSincronizarClick(Sender: TObject);
 private
   PerguntarPlaca: Boolean;
   JaCarregouMensagens: Boolean;
@@ -861,6 +863,7 @@ Begin
   cboEquipamento.Position.Y:= 400;
   labEquipamento.Visible:= (dmoAPP.usuBancoDeDados = 'sigma');
   cboEquipamento.Visible:= (dmoAPP.usuBancoDeDados = 'sigma');
+  rreSincronizar.Visible:= (dmoAPP.usuBancoDeDados = 'sigma');
   recAguarde.Visible:= True;
   Animacao.Enabled:= True;
   //CONFIGURANDO CONPONENTES VISIVEIS NA TELA
@@ -3171,21 +3174,82 @@ begin
   end).Start;
 end;
 
-procedure TfmrPrincipal.rreReenviarEventosClick(Sender: TObject);
+procedure TfmrPrincipal.rreSincronizarClick(Sender: TObject);
 begin
-  msg1.Pergunta('Confirmação', 'Use essa opção apenas se a sua empresa pedir. Confirma o reenvio dos seus eventos?',
-  procedure
+  Carregar(True);
+  TThread.CreateAnonymousThread(
+  procedure()
+  var
+    jsonObj: TJsonObject;
+    jsonRecord: TJsonObject;
+    jsonArray: TJSONArray;
+    json: String;
+    i:Integer;
   begin
     if not dmoAPP.ChecarConexao then
     begin
-      msg1.Aviso('Aviso de internet', 'Sua conexão com a internet está muito fraca nesse moemnto. Recomendamos tentar novamente mais tarde.');
-      exit;
+      msg1.Aviso('Falha de conexão', 'Verifique a sua conexão com a internet e tente novamente mais tarde');
+      TThread.Synchronize(TThread.CurrentThread,
+      procedure()
+      begin
+        Carregar(False);
+      end);
+      Exit;
     end;
-    incAguardeReenviar:= 60;
-    labAguardeReenviar.Text:= 'Aguarde 60 ' + 'Segundos...';
-    recAguardeReenviar.Visible:= True;
-    aniAguardeReenviar.Enabled:= True;
-  end);
+    //Listando os eventos
+    with qry do
+    begin
+      //Criar os componentes de conexão com a API
+      RESTRequestE.Resource:= 'ReceberJornada';
+      //Receber eventos da API
+      try
+        RESTRequestE.Params.Clear;
+        RESTRequestE.AddParameter('usuBancoDeDados', dmoApp.usuBancoDeDados);
+        RESTRequestE.AddParameter('funCod', IntToStr(dmoApp.funCod));
+        RESTRequestE.Execute;
+      except
+        TThread.Synchronize(TThread.CurrentThread,
+        procedure()
+        begin
+          msg1.Aviso('Falha de conexão', 'Verifique sua conexão e tente novamente mais tarde.');
+        end);
+        Exit;
+      end;
+      json:= RESTRequestE.Response.JSONValue.ToString;
+      jsonObj:= TJsonObject.ParseJSONValue(TEncoding.UTF8.GetBytes(json),0) as TJsonObject;
+      jsonArray:= TJSONArray(jsonObj.Values['ReceberJornada']);
+      //Gravar eventos no SQLite
+      for i := 0 to Pred(jsonArray.Count) do
+      begin
+        jsonRecord:= TJSONObject(jsonArray.Items[i]);
+        Close;
+        SQL.Clear;
+        SQL.Add('SELECT ejoCod FROM Jornada WHERE funCod = :pFunCod AND TRIM(strftime(''%Y'', jorDataHora) || ''-'' || strftime(''%m'', jorDataHora) || ''-'' || strftime(''%d'', jorDataHora) || '' '' || strftime(''%H'', jorDataHora) || '':'' || strftime(''%M'', jorDataHora)) LIKE :pJorDataHora');
+        ParamByName('pFunCod').Value:= dmoAPP.funCod;
+        ParamByName('pJorDataHora').Text:= FormatDateTime('YYYY-MM-DD HH:MM', StrToDateTime(Trim(jsonRecord.GetValue('jorDataHora').Value)));
+        Open;
+        if RecordCount = 0 then
+        begin
+          Close;
+          SQL.Clear;
+          SQL.Add('INSERT INTO Jornada');
+          SQL.Add('(funCod, jorDataHora, ejoCod, jorSincronizado)');
+          SQL.Add('VALUES(:PfunCod, :PjorDataHora, :PejoCod, :PjorSincronizado)');
+          ParamByName('PfunCod').Value:= dmoAPP.funCod;
+          ParamByName('PjorDataHora').Value:= StrToDateTime(jsonRecord.GetValue('jorDataHora').Value);
+          ParamByName('PejoCod').Value:= StrToInt(jsonRecord.GetValue('ejoCod').Value);
+          ParamByName('PjorSincronizado').Value:= True;
+          ExecSQL;
+        end;
+      end;
+    end;
+    TThread.Synchronize(TThread.CurrentThread,
+    procedure()
+    begin
+      CarregarHistorico;
+      Carregar(False);
+    end);
+  end).Start;
 end;
 
 //PUBLIC
