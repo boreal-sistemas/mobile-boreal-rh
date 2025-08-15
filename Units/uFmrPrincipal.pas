@@ -178,6 +178,11 @@ type
     recReenviarTodos: TRectangle;
     labReenviarTodosTitulo: TLabel;
     labReenviarTodosEventos: TLabel;
+    rreSemPlaca: TRoundRect;
+    labSemPlaca: TLabel;
+    recSincronizar: TRectangle;
+    labSincronizar: TLabel;
+    Label3: TLabel;
   procedure FormCreate(Sender: TObject);
   procedure TimerTimer(Sender: TObject);
   procedure Clicar(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
@@ -235,6 +240,8 @@ type
     procedure recLimparCacheClick(Sender: TObject);
     procedure rreAtualizarPlacaClick(Sender: TObject);
     procedure recReenviarTodosClick(Sender: TObject);
+    procedure rreSemPlacaClick(Sender: TObject);
+    procedure recSincronizarClick(Sender: TObject);
 private
   PerguntarPlaca: Boolean;
   JaCarregouMensagens: Boolean;
@@ -2800,6 +2807,11 @@ begin
   TRectangle(Sender).Fill.Color := $FFFFFFF;
 end;
 
+procedure TfmrPrincipal.recSincronizarClick(Sender: TObject);
+begin
+  dmoApp.Sincronizar;
+end;
+
 procedure TfmrPrincipal.recLimparCacheClick(Sender: TObject);
 begin
   {$IFDEF Android}
@@ -3185,6 +3197,107 @@ begin
     labAguardeReenviar.Text:= 'Aguarde 60 ' + 'Segundos...';
     recAguardeReenviar.Visible:= True;
     aniAguardeReenviar.Enabled:= True;
+  end);
+end;
+
+procedure TfmrPrincipal.rreSemPlacaClick(Sender: TObject);
+Var
+  Placa, Equipamento: string;
+  qryPlaca: TFDQuery;
+begin
+  msg1.Pergunta('Sem placa', 'Você confirma que está sem veículo?',
+  procedure
+  begin
+    //ENVIAR A PLACA
+    try
+      Inc(qtdClique);
+      if qtdClique < 2 then
+      begin
+        TThread.CreateAnonymousThread(
+        procedure()
+        var
+          qryPlaca: TFDQuery;
+        begin
+          qryPlaca:= TFDQuery.Create(nil);
+          qryPlaca.Connection:= dmoAPP.Conn;
+          try
+            if (dmoAPP.usuBancoDeDados = 'sigma') or (dmoAPP.usuBancoDeDados = 'WebDesenvolvimento') then
+            begin
+              try
+                if cboEquipamento.ItemIndex > -1 then
+                  Equipamento:=' <EQ>' + cboEquipamento.Selected.Text + '</EQ>'
+                else
+                  Equipamento:=' <EQ>N/D.</EQ>';
+              except
+                Equipamento:=' <EQ>N/D.</EQ>';
+              end;
+            end;
+            //Salvar no SQLite
+            with qryPlaca do
+            begin
+              Close;
+              SQL.Clear;
+              SQL.Add('INSERT INTO Jornada');
+              SQL.Add('(funCod, jorDataHora, ejoCod, jorObservacao, jorLatitude, jorLongitude, jorSincronizado)');
+              SQL.Add('VALUES(:PfunCod, :PjorDataHora, (SELECT MIN(ejoCod) FROM EventosJornada), :PjorObservacao, :PjorLatitude, :PjorLongitude, :PjorSincronizado)');
+              ParamByName('PfunCod').Value:= dmoApp.funCod;
+              if trim(dmoAPP.usuBancoDeDados) = 'rodobelo' then
+                ParamByName('PjorDataHora').Value:= TDateTime(TTimeZone.Local.ToUniversalTime(Now) - StrToTime('04:00:00'))
+              else
+                ParamByName('PjorDataHora').Value:= Now;
+              if (dmoAPP.usuBancoDeDados = 'sigma') or (dmoAPP.usuBancoDeDados = 'WebDesenvolvimento') then
+                 ParamByName('PjorObservacao').Text:= 'placaSEMPLAC' + Equipamento
+              else
+                 ParamByName('PjorObservacao').Text:= 'placaSEMPLAC';
+              ParamByName('PjorLatitude').Text:= 'n.a.';
+              ParamByName('PjorLongitude').Text:= 'n.a.';
+              ParamByName('PjorSincronizado').Value:= False;
+              ExecSQL;
+              TThread.Synchronize(TThread.CurrentThread,
+              procedure()
+              begin
+                //MARCAR O PONTO (SERPA)
+                if (dmoAPP.usuBancoDeDados = 'transpanorama') or (dmoAPP.usuBancoDeDados = 'transpanoramahomologacao') then
+                begin
+                  recPlaca.Visible:= False;
+                  recEventosJornada.Visible:= True;
+                  tcoPrincipal.ActiveTab:= titHome;
+                  recHome.Fill.Color:= $FF251264;
+                  recHistorico.Fill.Color:= $FF150B36;
+                  recDados.Fill.Color:= $FF150B36;
+                  recChat.Fill.Color:= $FF150B36;
+                  recAjuste.Fill.Color:= $FF150B36;
+                  recPlaca.Visible:= False;
+                  dmoApp.jorDataHora:= Now;
+                  dmoApp.EjoCod:= aTag;
+                  MarcarPonto('1');
+                end
+                else
+                begin
+                  tcoPrincipal.ActiveTab:= titHistorico;
+                  recHome.Fill.Color:= $FF150B36;
+                  recHistorico.Fill.Color:= $FF251264;
+                  recDados.Fill.Color:= $FF150B36;
+                  recChat.Fill.Color:= $FF150B36;
+                  recAjuste.Fill.Color:= $FF150B36;
+                  CarregarHistorico;
+                end;
+              end);
+            end;
+          finally
+            qryPlaca.DisposeOf;
+          end;
+        end).Start;
+      end;
+      qtdClique:= 0;
+    finally
+      TThread.Synchronize(TThread.CurrentThread,
+      procedure()
+      begin
+        recPlaca.Visible:= False;
+        recEventosJornada.Visible:= True;
+      end);
+    end;
   end);
 end;
 
