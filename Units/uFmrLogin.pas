@@ -3,159 +3,206 @@ unit uFmrLogin;
 interface
 
 uses
-  //ANDROID
-  {$IFDEF Android}
+  {$IFDEF ANDROID}
     FMX.Helpers.Android, Androidapi.JNI.JavaTypes, Androidapi.Helpers, Androidapi.JNI.Location, Androidapi.JNI.Provider,
-    Androidapi.JNI.App, Androidapi.JNI.GraphicsContentViewText,  Androidapi.JNIBridge,  Androidapi.JNI.Os, Androidapi.JNI.Net,
+    Androidapi.JNI.App, Androidapi.JNI.GraphicsContentViewText, Androidapi.JNIBridge, Androidapi.JNI.Os, Androidapi.JNI.Net,
+    DW.PushServiceNotification.Android,
   {$ENDIF}
-  //FMX
-    FMX.Types, FMX.Forms, FMX.Controls, FMX.Graphics, FMX.Objects,
-    FMX.Layouts, FMX.Edit, FMX.StdCtrls, FMX.Controls.Presentation, System.Permissions,
-  //SYSTEM
-    System.Types, System.UITypes, System.Classes, System.Variants, System.JSON,
-    System.SysUtils, System.Sensors, System.Sensors.Components, System.Threading,
-  //FIREDAC
-    FireDAC.Stan.Param, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
-    FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
+    FMX.Types, FMX.Forms, FMX.Controls, FMX.Graphics, FMX.Objects, FMX.Layouts, FMX.Edit, FMX.StdCtrls, FMX.Controls.Presentation, System.Permissions,
+    System.Types, System.UITypes, System.Classes, System.Variants, System.JSON, System.SysUtils, System.Sensors, System.Sensors.Components, System.Threading,
+    FireDAC.Stan.Param, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
     FireDAC.DApt, FireDAC.Comp.Client, FireDAC.Comp.DataSet,
-  //DATA
     Data.DB, Data.Bind.Components, Data.Bind.ObjectScope,
-  //REST
     REST.Types, REST.Client, REST.Authenticator.Basic, System.DateUtils,
-  //BOREAL
-    uframeDialog, FMX.Effects, FMX.BiometricAuth;
+    uframeDialog, FMX.Effects, FMX.BiometricAuth, System.PushNotification, System.Messaging;
+
 type
-  TfmrLogin = class(TForm)
-  imgLogo: TImage;
-  layUsuario: TLayout;
-  rreUsuario: TRoundRect;
-  edtUsuario: TEdit;
-  styBook: TStyleBook;
-  laySenha: TLayout;
-  rreSenha: TRoundRect;
-  edtSenha: TEdit;
-  layConectar: TLayout;
-  rreConectar: TRoundRect;
-  labConectar: TLabel;
-  imgUsuario: TImage;
-  imgSenha: TImage;
-  recRodape: TRectangle;
-  labBorealDesenvolvimentos: TLabel;
-  RESTClientLogin: TRESTClient;
-  reqLogin: TRESTRequest;
-  imgExibirSenha: TImage;
-  rreSenhaVisivel: TRoundRect;
-  layCamposLogin: TLayout;
-  labVersao: TLabel;
-    imgCaminhao: TImage;
-  qry: TFDQuery;
-  imgLoading: TImage;
-  Animacao: TAniIndicator;
-  Rectangle1: TRectangle;
-  Label1: TLabel;
-  labAguarde: TLabel;
-  RESTClientSQL: TRESTClient;
-  RESTRequestSQL: TRESTRequest;
-  recLigarGPS: TRectangle;
-  Label2: TLabel;
-  Button1: TButton;
-  msg: Tmsg;
-  Button2: TButton;
-    recRedefinirSenha: TRectangle;
-    rreConfirmar: TRoundRect;
-    labConfirmarNovaSenha: TLabel;
-    edtNovaSenha: TEdit;
-    rreNovaSenha: TRoundRect;
-    imgVisualizarNovaSenha: TImage;
-    rreConfirmarNovaSenha: TRoundRect;
-    imgVisualizarConfirmacao: TImage;
-    edtConfirmarSenha: TEdit;
-    RoundRect5: TRoundRect;
-    RoundRect2: TRoundRect;
-    Label3: TLabel;
-    bauLogin: TBiometricAuth;
-  procedure SetStatusBarColorBoreal;
-  procedure imgExibirSenhaClick(Sender: TObject);
-  procedure rreConectarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-  procedure rreConectarClick(Sender: TObject);
-  procedure rreConectarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
-  procedure rreConectarMouseLeave(Sender: TObject);
-  procedure FormVirtualKeyboardShown(Sender: TObject; KeyboardVisible: Boolean; const Bounds: TRect);
-  procedure FormVirtualKeyboardHidden(Sender: TObject; KeyboardVisible: Boolean; const Bounds: TRect);
-  procedure Carregar(Sim: Boolean);
-  procedure FormClose(Sender: TObject; var Action: TCloseAction);
-  procedure Button1Click(Sender: TObject);
-  procedure Button2Click(Sender: TObject);
-  procedure imgVisualizarConfirmacaoClick(Sender: TObject);
-  procedure imgVisualizarNovaSenhaClick(Sender: TObject);
-  procedure rreConfirmarMouseDown(Sender: TObject; Button: TMouseButton;
-    Shift: TShiftState; X, Y: Single);
-  procedure rreConfirmarMouseLeave(Sender: TObject);
-  procedure rreConfirmarMouseUp(Sender: TObject; Button: TMouseButton;
-    Shift: TShiftState; X, Y: Single);
-  procedure rreConfirmarClick(Sender: TObject);
-  procedure bauLoginAuthenticateFail(Sender: TObject;
-    const FailReason: TBiometricFailReason; const ResultMessage: string);
-  procedure bauLoginAuthenticateSuccess(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure FormShow(Sender: TObject);
-private
+    TfmrLogin = class(TForm)
+        imgLogo: TImage;
+        layUsuario: TLayout;
+        rreUsuario: TRoundRect;
+        edtUsuario: TEdit;
+        styBook: TStyleBook;
+        laySenha: TLayout;
+        rreSenha: TRoundRect;
+        edtSenha: TEdit;
+        layConectar: TLayout;
+        rreConectar: TRoundRect;
+        labConectar: TLabel;
+        imgUsuario: TImage;
+        imgSenha: TImage;
+        recRodape: TRectangle;
+        labBorealDesenvolvimentos: TLabel;
+        RESTClientLogin: TRESTClient;
+        reqLogin: TRESTRequest;
+        imgExibirSenha: TImage;
+        rreSenhaVisivel: TRoundRect;
+        layCamposLogin: TLayout;
+        labVersao: TLabel;
+        imgCaminhao: TImage;
+        qry: TFDQuery;
+        imgLoading: TImage;
+        Animacao: TAniIndicator;
+        Rectangle1: TRectangle;
+        Label1: TLabel;
+        labAguarde: TLabel;
+        RESTClientSQL: TRESTClient;
+        RESTRequestSQL: TRESTRequest;
+        recLigarGPS: TRectangle;
+        Label2: TLabel;
+        Button1: TButton;
+        msg: Tmsg;
+        Button2: TButton;
+        recRedefinirSenha: TRectangle;
+        rreConfirmar: TRoundRect;
+        labConfirmarNovaSenha: TLabel;
+        edtNovaSenha: TEdit;
+        rreNovaSenha: TRoundRect;
+        imgVisualizarNovaSenha: TImage;
+        rreConfirmarNovaSenha: TRoundRect;
+        imgVisualizarConfirmacao: TImage;
+        edtConfirmarSenha: TEdit;
+        RoundRect5: TRoundRect;
+        RoundRect2: TRoundRect;
+        Label3: TLabel;
+        bauLogin: TBiometricAuth;
+        procedure SetStatusBarColorBoreal;
+        procedure imgExibirSenhaClick(Sender: TObject);
+        procedure rreConectarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+        procedure rreConectarClick(Sender: TObject);
+        procedure rreConectarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+        procedure rreConectarMouseLeave(Sender: TObject);
+        procedure FormVirtualKeyboardShown(Sender: TObject; KeyboardVisible: Boolean; const Bounds: TRect);
+        procedure FormVirtualKeyboardHidden(Sender: TObject; KeyboardVisible: Boolean; const Bounds: TRect);
+        procedure Carregar(Sim: Boolean);
+        procedure FormClose(Sender: TObject; var Action: TCloseAction);
+        procedure Button1Click(Sender: TObject);
+        procedure Button2Click(Sender: TObject);
+        procedure imgVisualizarConfirmacaoClick(Sender: TObject);
+        procedure imgVisualizarNovaSenhaClick(Sender: TObject);
+        procedure rreConfirmarMouseDown(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+        procedure rreConfirmarMouseLeave(Sender: TObject);
+        procedure rreConfirmarMouseUp(Sender: TObject; Button: TMouseButton; Shift: TShiftState; X, Y: Single);
+        procedure rreConfirmarClick(Sender: TObject);
+        procedure bauLoginAuthenticateFail(Sender: TObject; const FailReason: TBiometricFailReason; const ResultMessage: string);
+        procedure bauLoginAuthenticateSuccess(Sender: TObject);
+        procedure FormShow(Sender: TObject);
+        procedure FormCreate(Sender: TObject);
+  private
+  {$IFDEF ANDROID}
+    FPushService: TPushService;
+    FPushConn: TPushServiceConnection; // <-- Adiciona isso!
+    procedure OnPushTokenChange(Sender: TObject; AChange: TPushService.TChanges);
+    procedure OnPushMessage(Sender: TObject; const ANotification: TPushServiceNotification);
+  {$ENDIF}
   procedure ValidarLogin(UsuarioValido: Boolean);
-end;
+
+    end;
 
 var
-
-  fmrLogin: TfmrLogin;
+    fmrLogin: TfmrLogin;
 
 implementation
 
-  {$R *.fmx}
-  {$R *.XLgXhdpiTb.fmx ANDROID}
-  {$R *.SmXhdpiPh.fmx ANDROID}
-  {$R *.NmXhdpiPh.fmx ANDROID}
-  {$R *.LgXhdpiPh.fmx ANDROID}
-  {$R *.LgXhdpiTb.fmx ANDROID}
-  {$R *.iPad.fmx IOS}
-  {$R *.iPhone.fmx IOS}
-  {$R *.iPhone4in.fmx IOS}
-  {$R *.iPhone47in.fmx IOS}
-  {$R *.iPhone55in.fmx IOS}
+{$R *.fmx}
+{$R *.XLgXhdpiTb.fmx ANDROID}
+{$R *.SmXhdpiPh.fmx ANDROID}
+{$R *.NmXhdpiPh.fmx ANDROID}
+{$R *.LgXhdpiPh.fmx ANDROID}
+{$R *.LgXhdpiTb.fmx ANDROID}
+{$R *.iPad.fmx IOS}
+{$R *.iPhone.fmx IOS}
+{$R *.iPhone4in.fmx IOS}
+{$R *.iPhone47in.fmx IOS}
+{$R *.iPhone55in.fmx IOS}
 
-uses uFmrPrincipal, uFmrDM;
+uses
+  uFmrPrincipal, uFmrDM;
 
-function SenhaSegura(const cSenha:String):Boolean;
-function SoLetras(s:string):boolean;
+
+
+function SenhaSegura(const cSenha: string): Boolean;
+function SoLetras(s: string): boolean;
 const
- c :Array [1..10]  of char  = ('0','1','2','3','4','5','6','7','8','9');
+    c: array[1..10] of char = ('0','1','2','3','4','5','6','7','8','9');
 var
- idx:integer;
-begin    //tem letras
-result:=true;
-for idx:=1 to length(c) do
-  if pos(c[idx],s)>0 then
-     begin
-       result:=false;
-       Break;
-     end;
- end;
-Const
-cCharMin=6;
-var
-n:Int64;
+    idx: integer;
 begin
-result:=(length(cSenha) = cCharMin)and(not TryStrToInt64(cSenha,n))and(not SoLetras(cSenha));
+    result := true;
+    for idx := 1 to length(c) do
+        if pos(c[idx], s) > 0 then
+        begin
+            result := false;
+            Break;
+        end;
+end;
+const
+    cCharMin = 6;
+var
+    n: Int64;
+begin
+    result := (length(cSenha) = cCharMin) and (not TryStrToInt64(cSenha, n)) and (not SoLetras(cSenha));
 end;
 
-procedure TfmrLogin.bauLoginAuthenticateFail(Sender: TObject;
-  const FailReason: TBiometricFailReason; const ResultMessage: string);
+{$IFDEF ANDROID}
+procedure TfmrLogin.OnPushTokenChange(Sender: TObject; AChange: TPushService.TChanges);
 begin
-  Carregar(False);
-  msg.Aviso('Falha ao autenticar', 'Tente novamente')
+  if not Assigned(FPushService) then
+  begin
+    msg.Aviso('Push', 'Serviço de push ainda não está pronto.');
+    Exit;
+  end;
+
+  if TPushService.TChange.DeviceToken in AChange then
+  begin
+    var Token := FPushService.DeviceTokenValue[TPushService.TDeviceTokenNames.DeviceToken];
+    if Token <> '' then
+      msg.Aviso('Push', 'Novo Token: ' + Token)
+    else
+      msg.Aviso('Push', 'Token ainda não disponível.');
+  end;
+end;
+
+{$ENDIF}
+
+{$IFDEF ANDROID}
+procedure TfmrLogin.OnPushMessage(Sender: TObject; const ANotification: TPushServiceNotification);
+var
+  LObj: TJSONObject;
+  LTitle, LBody: string;
+begin
+  // Android: faz cast pro tipo concreto e lê o payload
+  if ANotification is TAndroidPushServiceNotification then
+  begin
+    LTitle := '';
+    LBody := '';
+    LObj := TAndroidPushServiceNotification(ANotification).DataObject; // público
+    if LObj <> nil then
+    begin
+      LObj.TryGetValue<string>('title', LTitle);
+      LObj.TryGetValue<string>('body',  LBody);
+    end;
+    if (LTitle <> '') or (LBody <> '') then
+      msg.Aviso('Push', LTitle + ': ' + LBody)
+    else
+      msg.Aviso('Push', TAndroidPushServiceNotification(ANotification).Json.ToJSON); // fallback
+    Exit;
+  end;
+
+  // Outros alvos (se algum dia usar): mensagem genérica
+  msg.Aviso('Push','Recebi uma notificação');
+end;
+{$ENDIF}
+
+procedure TfmrLogin.bauLoginAuthenticateFail(Sender: TObject; const FailReason: TBiometricFailReason; const ResultMessage: string);
+begin
+    Carregar(False);
+    msg.Aviso('Falha ao autenticar','Tente novamente');
 end;
 
 procedure TfmrLogin.bauLoginAuthenticateSuccess(Sender: TObject);
 begin
-  ValidarLogin(true);
+    ValidarLogin(true);
 end;
 
 procedure TfmrLogin.Button1Click(Sender: TObject);
@@ -204,106 +251,151 @@ procedure TfmrLogin.FormCreate(Sender: TObject);
 {$IFDEF Android}
   var
     Versao: JPackageInfo;
+    LService: TPushService;
+    PushServiceManager: TPushServiceManager;
 {$ENDIF}
-begin
-  Carregar(False);
-  try
-    recRedefinirSenha.Visible := False;
-    dmoAPP.Logado := False;
 
-  if fmrLogin.Tag <> 99 then
-  begin
-    TTask.Run(procedure
+begin
+
+
+  {msg.Aviso('Aviso', 'Iniciando Firebase...');
+  TThread.CreateAnonymousThread(
+    procedure
     begin
-      try
-        dmoApp.Conn.Connected := True;
-        with qry do
+      Sleep(800);
+      TThread.Synchronize(nil,
+        procedure
+        var
+          PushServiceManager: TPushServiceManager;
         begin
           try
-            Close;
-            SQL.Text := 'SELECT veiPlaca FROM Veiculo LIMIT 1';
-            Open;
-          except
-            Close;
-            SQL.Text := 'CREATE TABLE Veiculo (veiPlaca VARCHAR(32))';
-            ExecSQL;
-          end;
+            PushServiceManager := TPushServiceManager.Create;
 
-          try
-            Close;
-            SQL.Text := 'SELECT ejoBatePonto FROM EventosJornada LIMIT 1';
-            Open;
-          except
-            Close;
-            SQL.Text := 'ALTER TABLE EventosJornada ADD ejoBatePonto BOOLEAN';
-            ExecSQL;
-            SQL.Text := 'ALTER TABLE EventosJornada ADD ejoAplicativo BOOLEAN';
-            ExecSQL;
-          end;
-
-          try
-            Close;
-            SQL.Text := 'SELECT jorObs FROM Jornada LIMIT 1';
-            Open;
-          except
-            Close;
-            SQL.Text := 'ALTER TABLE Jornada ADD jorObs BOOLEAN';
-            ExecSQL;
-            SQL.Text := 'ALTER TABLE Jornada ADD jorObservacao2 VARCHAR(356)';
-            ExecSQL;
-            SQL.Text := 'UPDATE Jornada SET jorObservacao2 = jorObservacao';
-            ExecSQL;
-            SQL.Text := 'ALTER TABLE Jornada DROP jorObservacao';
-            ExecSQL;
-            SQL.Text := 'ALTER TABLE Jornada ADD jorObservacao VARCHAR(356)';
-            ExecSQL;
-            SQL.Text := 'UPDATE Jornada SET jorObservacao = jorObservacao2';
-            ExecSQL;
-            SQL.Text := 'ALTER TABLE Jornada DROP jorObservacao2';
-            ExecSQL;
-          end;
-
-          Close;
-          SQL.Text := 'SELECT * FROM Usuario LIMIT 1';
-          Open;
-
-          if RecordCount > 0 then
-          begin
-            TThread.Queue(nil, procedure
+            // tente FCM; se falhar, dá para testar GCM só pra ver se registra algo
+            FPushService := TPushServiceManager.Create.GetServiceByName(TPushService.TServiceNames.FCM);
+            if not Assigned(FPushService) then
             begin
-              edtUsuario.Text := FieldByName('usuLogin').AsString;
-              edtSenha.Text := FieldByName('usuSenha').AsString;
-              dmoApp.usuLogin := FieldByName('usuLogin').AsString;
-              dmoApp.usuSenha := FieldByName('usuSenha').AsString;
-              dmoAPP.usuSenhaAnt := dmoAPP.usuSenha;
-              dmoApp.usuNome := FieldByName('usuNome').AsString;
-              dmoApp.usuBancoDeDados := FieldByName('usuBancoDeDados').AsString;
-              dmoApp.funCod := FieldByName('usuFuncionario').Value;
-            end);
-          end;
-        end;
-      except
-      end;
-    end);
-  end;
-  finally
-  end;
+              msg.Aviso('Push', 'Serviço FCM não disponível');
+              Exit;
+            end;
 
-  {$IFDEF Android}
-    TTask.Run(procedure
-    begin
-      Versao := SharedActivity.getPackageManager.getPackageInfo(SharedActivity.getPackageName, 0);
-      TThread.Queue(nil, procedure
+
+            if not Assigned(FPushService) then
+            begin
+              msg.Aviso('Push','Serviço FCM não disponível (libs/provider ausentes)');
+              Exit;
+            end;
+
+            FPushConn := TPushServiceConnection.Create(FPushService);
+            FPushConn.OnChange := OnPushTokenChange;
+            FPushConn.OnReceiveNotification := OnPushMessage;
+            FPushConn.Active := True;
+
+            msg.Aviso('Sucesso', 'Push configurado com sucesso!');
+          except
+            on E: Exception do
+              msg.Aviso('Erro', 'Erro no Firebase: ' + E.ClassName + ' - ' + E.Message);
+          end;
+        end);
+    end).Start;}
+  Carregar(False);
+    try
+      recRedefinirSenha.Visible := False;
+      dmoAPP.Logado := False;
+
+      if fmrLogin.Tag <> 99 then
       begin
-        labVersao.Text := 'Versão ' + JStringToString(Versao.versionName);
-        dmoAPP.VersaoAPP := JStringToString(Versao.versionName);
+        TTask.Run(procedure
+        begin
+          try
+            dmoApp.Conn.Connected := True;
+            with qry do
+            begin
+              try
+                Close;
+                SQL.Text := 'SELECT veiPlaca FROM Veiculo LIMIT 1';
+                Open;
+              except
+                Close;
+                SQL.Text := 'CREATE TABLE Veiculo (veiPlaca VARCHAR(32))';
+                ExecSQL;
+              end;
+
+              try
+                Close;
+                SQL.Text := 'SELECT ejoBatePonto FROM EventosJornada LIMIT 1';
+                Open;
+              except
+                Close;
+                SQL.Text := 'ALTER TABLE EventosJornada ADD ejoBatePonto BOOLEAN';
+                ExecSQL;
+                SQL.Text := 'ALTER TABLE EventosJornada ADD ejoAplicativo BOOLEAN';
+                ExecSQL;
+              end;
+
+              try
+                Close;
+                SQL.Text := 'SELECT jorObs FROM Jornada LIMIT 1';
+                Open;
+              except
+                Close;
+                SQL.Text := 'ALTER TABLE Jornada ADD jorObs BOOLEAN';
+                ExecSQL;
+                SQL.Text := 'ALTER TABLE Jornada ADD jorObservacao2 VARCHAR(356)';
+                ExecSQL;
+                SQL.Text := 'UPDATE Jornada SET jorObservacao2 = jorObservacao';
+                ExecSQL;
+                SQL.Text := 'ALTER TABLE Jornada DROP jorObservacao';
+                ExecSQL;
+                SQL.Text := 'ALTER TABLE Jornada ADD jorObservacao VARCHAR(356)';
+                ExecSQL;
+                SQL.Text := 'UPDATE Jornada SET jorObservacao = jorObservacao2';
+                ExecSQL;
+                SQL.Text := 'ALTER TABLE Jornada DROP jorObservacao2';
+                ExecSQL;
+              end;
+
+              Close;
+              SQL.Text := 'SELECT * FROM Usuario LIMIT 1';
+              Open;
+
+              if RecordCount > 0 then
+              begin
+                TThread.Queue(nil, procedure
+                begin
+                  edtUsuario.Text := FieldByName('usuLogin').AsString;
+                  edtSenha.Text := FieldByName('usuSenha').AsString;
+                  dmoApp.usuLogin := FieldByName('usuLogin').AsString;
+                  dmoApp.usuSenha := FieldByName('usuSenha').AsString;
+                  dmoAPP.usuSenhaAnt := dmoAPP.usuSenha;
+                  dmoApp.usuNome := FieldByName('usuNome').AsString;
+                  dmoApp.usuBancoDeDados := FieldByName('usuBancoDeDados').AsString;
+                  dmoApp.funCod := FieldByName('usuFuncionario').Value;
+                end);
+              end;
+            end;
+          except
+          end;
+        end);
+      end;
+    finally
+    end;
+
+    {$IFDEF Android}
+      TTask.Run(procedure
+      begin
+        Versao := SharedActivity.getPackageManager.getPackageInfo(SharedActivity.getPackageName, 0);
+        TThread.Queue(nil, procedure
+        begin
+          labVersao.Text := 'Versão ' + JStringToString(Versao.versionName);
+          dmoAPP.VersaoAPP := JStringToString(Versao.versionName);
+        end);
       end);
-    end);
-  {$ENDIF}
-  {$IFDEF IOS}
-    labVersao.Text := '532';
-    dmoAPP.VersaoAPP := labVersao.Text;
-  {$ENDIF}
+    {$ENDIF}
+    {$IFDEF IOS}
+      labVersao.Text := '532';
+      dmoAPP.VersaoAPP := labVersao.Text;
+    {$ENDIF}
 end;
 
 procedure TfmrLogin.FormShow(Sender: TObject);
