@@ -2809,6 +2809,7 @@ end;
 
 procedure TfmrPrincipal.recSincronizarClick(Sender: TObject);
 begin
+  recSincronizar.Enabled := False;
   dmoApp.Sincronizar;
 end;
 

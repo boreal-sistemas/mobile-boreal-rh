@@ -3,7 +3,7 @@ object fmrPrincipal: TfmrPrincipal
   Top = 0
   BorderIcons = []
   Caption = 'Principal'
-  ClientHeight = 1162
+  ClientHeight = 1227
   ClientWidth = 698
   Fill.Color = xFF190539
   Fill.Kind = Solid
@@ -25,7 +25,7 @@ object fmrPrincipal: TfmrPrincipal
   object recFooter: TRectangle
     Align = Bottom
     Fill.Color = xFF150B36
-    Position.Y = 1097.000000000000000000
+    Position.Y = 1162.000000000000000000
     Size.Width = 698.000000000000000000
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
@@ -631,7 +631,7 @@ object fmrPrincipal: TfmrPrincipal
     Align = Client
     Fill.Color = claWhite
     Size.Width = 698.000000000000000000
-    Size.Height = 965.000000000000000000
+    Size.Height = 1030.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
     XRadius = 30.000000000000000000
@@ -643,7 +643,7 @@ object fmrPrincipal: TfmrPrincipal
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
       Size.Width = 678.000000000000000000
-      Size.Height = 945.000000000000000000
+      Size.Height = 1010.000000000000000000
       Size.PlatformDefault = False
       TabIndex = 2
       TabOrder = 0
@@ -651,15 +651,15 @@ object fmrPrincipal: TfmrPrincipal
       OnChange = tcoPrincipalChange
       Sizes = (
         678s
-        945s
+        1010s
         678s
-        945s
+        1010s
         678s
-        945s
+        1010s
         678s
-        945s
+        1010s
         678s
-        945s)
+        1010s)
       object titHome: TTabItem
         CustomIcon = <
           item
@@ -680,7 +680,7 @@ object fmrPrincipal: TfmrPrincipal
           Fill.Color = claWhite
           Locked = True
           Size.Width = 678.000000000000000000
-          Size.Height = 945.000000000000000000
+          Size.Height = 1010.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
           Stroke.Thickness = 0.000000000000000000
@@ -692,7 +692,7 @@ object fmrPrincipal: TfmrPrincipal
           Corners = [BottomRight]
           Fill.Kind = None
           Size.Width = 678.000000000000000000
-          Size.Height = 945.000000000000000000
+          Size.Height = 1010.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
           XRadius = 20.000000000000000000
@@ -764,7 +764,7 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Right = 8.000000000000000000
             Margins.Bottom = 8.000000000000000000
             Position.X = 8.000000000000000000
-            Position.Y = 885.000000000000000000
+            Position.Y = 950.000000000000000000
             Size.Width = 662.000000000000000000
             Size.Height = 52.000000000000000000
             Size.PlatformDefault = False
@@ -873,7 +873,7 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Right = 8.000000000000000000
             Margins.Bottom = 8.000000000000000000
             Position.X = 8.000000000000000000
-            Position.Y = 825.000000000000000000
+            Position.Y = 890.000000000000000000
             Size.Width = 662.000000000000000000
             Size.Height = 52.000000000000000000
             Size.PlatformDefault = False
@@ -933,7 +933,7 @@ object fmrPrincipal: TfmrPrincipal
           Align = Client
           Margins.Bottom = 10.000000000000000000
           Size.Width = 678.000000000000000000
-          Size.Height = 871.000000000000000000
+          Size.Height = 936.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 5
           ItemAppearance.ItemHeight = 120
@@ -1207,12 +1207,12 @@ object fmrPrincipal: TfmrPrincipal
           Margins.Right = 3.000000000000000000
           Margins.Bottom = 3.000000000000000000
           Size.Width = 672.000000000000000000
-          Size.Height = 827.000000000000000000
+          Size.Height = 892.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           AutoHide = False
           Viewport.Width = 667.000000000000000000
-          Viewport.Height = 822.000000000000000000
+          Viewport.Height = 887.000000000000000000
           object recFuncionario: TRectangle
             Align = Top
             Corners = []
@@ -1519,7 +1519,7 @@ object fmrPrincipal: TfmrPrincipal
               Margins.Top = -1.000000000000000000
               Position.Y = 518.000000000000000000
               Size.Width = 667.000000000000000000
-              Size.Height = 100.000000000000000000
+              Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1547,7 +1547,7 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
-                Size.Height = 77.000000000000000000
+                Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1561,9 +1561,9 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
-              Position.Y = 815.000000000000000000
+              Position.Y = 740.000000000000000000
               Size.Width = 667.000000000000000000
-              Size.Height = 100.000000000000000000
+              Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1595,7 +1595,7 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
-                Size.Height = 77.000000000000000000
+                Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1611,9 +1611,9 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
-              Position.Y = 617.000000000000000000
+              Position.Y = 592.000000000000000000
               Size.Width = 667.000000000000000000
-              Size.Height = 100.000000000000000000
+              Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1645,7 +1645,7 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
-                Size.Height = 77.000000000000000000
+                Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1659,9 +1659,9 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
-              Position.Y = 716.000000000000000000
+              Position.Y = 666.000000000000000000
               Size.Width = 667.000000000000000000
-              Size.Height = 100.000000000000000000
+              Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1693,7 +1693,7 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
-                Size.Height = 77.000000000000000000
+                Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1707,9 +1707,9 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
-              Position.Y = 914.000000000000000000
+              Position.Y = 814.000000000000000000
               Size.Width = 667.000000000000000000
-              Size.Height = 100.000000000000000000
+              Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1741,7 +1741,7 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
-                Size.Height = 77.000000000000000000
+                Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1758,7 +1758,7 @@ object fmrPrincipal: TfmrPrincipal
           Fill.Color = claWhite
           Margins.Top = 6.000000000000000000
           Margins.Bottom = 6.000000000000000000
-          Position.Y = 879.000000000000000000
+          Position.Y = 944.000000000000000000
           Size.Width = 678.000000000000000000
           Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
@@ -1846,7 +1846,7 @@ object fmrPrincipal: TfmrPrincipal
           Align = Client
           Margins.Bottom = 20.000000000000000000
           Size.Width = 678.000000000000000000
-          Size.Height = 885.000000000000000000
+          Size.Height = 950.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 4
           ItemAppearance.ItemHeight = 120
@@ -2185,7 +2185,7 @@ object fmrPrincipal: TfmrPrincipal
           Corners = []
           Fill.Color = claWhite
           Size.Width = 678.000000000000000000
-          Size.Height = 905.000000000000000000
+          Size.Height = 970.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
           Stroke.Thickness = 0.000000000000000000
@@ -4362,7 +4362,7 @@ object fmrPrincipal: TfmrPrincipal
       MarginWrapMode = Original
       Opacity = 0.070000000298023220
       Size.Width = 698.000000000000000000
-      Size.Height = 965.000000000000000000
+      Size.Height = 1030.000000000000000000
       Size.PlatformDefault = False
     end
     object recLigarGPS: TRectangle
