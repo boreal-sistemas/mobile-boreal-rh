@@ -5,7 +5,7 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>33808</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>Boreal.dpr</MainSource>
@@ -270,8 +270,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android)'!=''">
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
-        <VerInfo_Build>539</VerInfo_Build>
-        <VerInfo_Keys>package=com.boreal.Boreal;label=$(MSBuildProjectName);versionCode=539;versionName=539;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
+        <VerInfo_Build>540</VerInfo_Build>
+        <VerInfo_Keys>package=com.boreal.Boreal;label=$(MSBuildProjectName);versionCode=540;versionName=540;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <DCC_ExeOutput>..\Release\32\</DCC_ExeOutput>
         <DCC_DcuOutput>.\dcu32</DCC_DcuOutput>
@@ -294,8 +294,8 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <AUP_ACCESS_NETWORK_STATE>true</AUP_ACCESS_NETWORK_STATE>
-        <VerInfo_Build>539</VerInfo_Build>
-        <VerInfo_Keys>package=com.boreal.Boreal;label=$(MSBuildProjectName);versionCode=539;versionName=539;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
+        <VerInfo_Build>540</VerInfo_Build>
+        <VerInfo_Keys>package=com.boreal.Boreal;label=$(MSBuildProjectName);versionCode=540;versionName=540;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=AIzaSyATh8AfBFvb575rUDWsXcI_Z3DIkbSDEfA;minSdkVersion=23;targetSdkVersion=35</VerInfo_Keys>
         <DCC_ExeOutput>..\Release\64\</DCC_ExeOutput>
         <DCC_DcuOutput>.\dcu64</DCC_DcuOutput>
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
@@ -1531,6 +1531,12 @@
                 </DeployFile>
                 <DeployFile LocalName="..\Release\32\libBoreal.so" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Android">
+                        <RemoteName>libBoreal.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\Release\32\libBoreal.so" Configuration="Release" Class="ProjectOutput_Android32">
+                    <Platform Name="Android64">
                         <RemoteName>libBoreal.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

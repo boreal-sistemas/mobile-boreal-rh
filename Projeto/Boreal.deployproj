@@ -299,6 +299,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="..\Release\32\libBoreal.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Boreal\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libBoreal.so</RemoteName>
+            <DeployClass>ProjectOutput_Android32</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="..\Icones\aviso.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>Boreal\assets\internal\</RemoteDir>
             <RemoteName>aviso.png</RemoteName>
