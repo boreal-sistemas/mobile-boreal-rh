@@ -3,8 +3,17 @@ object fmrPrincipal: TfmrPrincipal
   Top = 0
   BorderIcons = []
   Caption = 'Principal'
+ robson/0815-subida-geral
   ClientHeight = 1227
+
+ HEAD
+  ClientHeight = 755
+  ClientWidth = 562
+
+  ClientHeight = 1162
+ main
   ClientWidth = 698
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
   Fill.Color = xFF190539
   Fill.Kind = Solid
   Position = ScreenCenter
@@ -25,8 +34,17 @@ object fmrPrincipal: TfmrPrincipal
   object recFooter: TRectangle
     Align = Bottom
     Fill.Color = xFF150B36
+ robson/0815-subida-geral
     Position.Y = 1162.000000000000000000
+
+ HEAD
+    Position.Y = 690.000000000000000000
+    Size.Width = 562.000000000000000000
+
+    Position.Y = 1097.000000000000000000
+ main
     Size.Width = 698.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
     Size.Height = 65.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -243,7 +261,11 @@ object fmrPrincipal: TfmrPrincipal
     Align = Top
     Corners = []
     Fill.Color = xFF190539
+ HEAD
+    Size.Width = 562.000000000000000000
+
     Size.Width = 698.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
     Size.Height = 66.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -255,7 +277,11 @@ object fmrPrincipal: TfmrPrincipal
       StyledSettings = [Family]
       Locked = True
       Margins.Left = 10.000000000000000000
+ HEAD
+      Size.Width = 494.000000000000000000
+
       Size.Width = 630.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
       Size.Height = 66.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 14.000000000000000000
@@ -295,7 +321,11 @@ object fmrPrincipal: TfmrPrincipal
       Margins.Top = 8.000000000000000000
       Margins.Right = 8.000000000000000000
       Margins.Bottom = 8.000000000000000000
+ HEAD
+      Position.X = 504.000000000000000000
+
       Position.X = 640.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
       Position.Y = 8.000000000000000000
       Size.Width = 50.000000000000000000
       Size.Height = 50.000000000000000000
@@ -630,8 +660,17 @@ object fmrPrincipal: TfmrPrincipal
   object recPrincipal: TRectangle
     Align = Client
     Fill.Color = claWhite
+ HEAD
+    Size.Width = 562.000000000000000000
+    Size.Height = 558.000000000000000000
+
     Size.Width = 698.000000000000000000
+ robson/0815-subida-geral
     Size.Height = 1030.000000000000000000
+
+    Size.Height = 965.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
     Size.PlatformDefault = False
     Stroke.Kind = None
     XRadius = 30.000000000000000000
@@ -642,14 +681,35 @@ object fmrPrincipal: TfmrPrincipal
       Margins.Top = 10.000000000000000000
       Margins.Right = 10.000000000000000000
       Margins.Bottom = 10.000000000000000000
+ HEAD
+      Size.Width = 542.000000000000000000
+      Size.Height = 538.000000000000000000
+
       Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
       Size.Height = 1010.000000000000000000
+
+      Size.Height = 945.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
       Size.PlatformDefault = False
       TabIndex = 2
       TabOrder = 0
       TabPosition = None
       OnChange = tcoPrincipalChange
       Sizes = (
+ HEAD
+        542s
+        538s
+        542s
+        538s
+        542s
+        538s
+        542s
+        538s
+        542s
+        538s)
+
         678s
         1010s
         678s
@@ -659,7 +719,12 @@ object fmrPrincipal: TfmrPrincipal
         678s
         1010s
         678s
+ robson/0815-subida-geral
         1010s)
+
+        945s)
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
       object titHome: TTabItem
         CustomIcon = <
           item
@@ -679,8 +744,17 @@ object fmrPrincipal: TfmrPrincipal
           Corners = []
           Fill.Color = claWhite
           Locked = True
+ HEAD
+          Size.Width = 542.000000000000000000
+          Size.Height = 538.000000000000000000
+
           Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
           Size.Height = 1010.000000000000000000
+
+          Size.Height = 945.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           Size.PlatformDefault = False
           Stroke.Kind = None
           Stroke.Thickness = 0.000000000000000000
@@ -691,8 +765,17 @@ object fmrPrincipal: TfmrPrincipal
           Align = Client
           Corners = [BottomRight]
           Fill.Kind = None
+ HEAD
+          Size.Width = 542.000000000000000000
+          Size.Height = 538.000000000000000000
+
           Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
           Size.Height = 1010.000000000000000000
+
+          Size.Height = 945.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           Size.PlatformDefault = False
           Stroke.Kind = None
           XRadius = 20.000000000000000000
@@ -706,7 +789,11 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Bottom = 6.000000000000000000
             Position.X = 6.000000000000000000
             Position.Y = 90.000000000000000000
+ HEAD
+            Size.Width = 530.000000000000000000
+
             Size.Width = 666.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 60.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -721,7 +808,11 @@ object fmrPrincipal: TfmrPrincipal
               Margins.Top = 10.000000000000000000
               Margins.Right = 15.000000000000000000
               Margins.Bottom = 10.000000000000000000
+ HEAD
+              Size.Width = 500.000000000000000000
+
               Size.Width = 636.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 40.000000000000000000
               Size.PlatformDefault = False
               TextPrompt = 'Digite a placa do ve'#237'culo'
@@ -764,8 +855,17 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Right = 8.000000000000000000
             Margins.Bottom = 8.000000000000000000
             Position.X = 8.000000000000000000
+ robson/0815-subida-geral
             Position.Y = 950.000000000000000000
+
+ HEAD
+            Position.Y = 478.000000000000000000
+            Size.Width = 526.000000000000000000
+
+            Position.Y = 885.000000000000000000
+ main
             Size.Width = 662.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 52.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -774,7 +874,11 @@ object fmrPrincipal: TfmrPrincipal
               Align = Client
               StyledSettings = [Family, Size, Style]
               Locked = True
+ HEAD
+              Size.Width = 526.000000000000000000
+
               Size.Width = 662.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 52.000000000000000000
               Size.PlatformDefault = False
               TextSettings.FontColor = xFF150B36
@@ -792,7 +896,11 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 10.000000000000000000
+ HEAD
+            Size.Width = 522.000000000000000000
+
             Size.Width = 658.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 60.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -809,7 +917,11 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Bottom = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 166.000000000000000000
+ HEAD
+            Size.Width = 522.000000000000000000
+
             Size.Width = 658.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 60.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -834,7 +946,11 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Right = 10.000000000000000000
             Position.X = 10.000000000000000000
             Position.Y = 236.000000000000000000
+ HEAD
+            Size.Width = 522.000000000000000000
+
             Size.Width = 658.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
@@ -911,7 +1027,11 @@ object fmrPrincipal: TfmrPrincipal
           Align = Top
           StyledSettings = []
           HelpContext = 20
+ HEAD
+          Size.Width = 542.000000000000000000
+
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
@@ -932,8 +1052,17 @@ object fmrPrincipal: TfmrPrincipal
           ItemSpaces.Right = 0.000000000000000000
           Align = Client
           Margins.Bottom = 10.000000000000000000
+ HEAD
+          Size.Width = 542.000000000000000000
+          Size.Height = 405.000000000000000000
+
           Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
           Size.Height = 936.000000000000000000
+
+          Size.Height = 871.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           Size.PlatformDefault = False
           TabOrder = 5
           ItemAppearance.ItemHeight = 120
@@ -1175,7 +1304,11 @@ object fmrPrincipal: TfmrPrincipal
           HelpContext = 20
           Margins.Bottom = 8.000000000000000000
           Position.Y = 40.000000000000000000
+ HEAD
+          Size.Width = 542.000000000000000000
+
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 16.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -1184,6 +1317,30 @@ object fmrPrincipal: TfmrPrincipal
           TextSettings.Trimming = None
           Text = 'Para n'#227'o perder seus dados, n'#227'o desinstale o APP'
           TabOrder = 0
+        end
+        object rreSincronizar: TRoundRect
+          Align = Bottom
+          Fill.Color = xFFD58422
+          Margins.Top = 4.000000000000000000
+          Margins.Bottom = 8.000000000000000000
+          Position.Y = 483.000000000000000000
+          Size.Width = 542.000000000000000000
+          Size.Height = 47.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          OnClick = rreSincronizarClick
+          object labSincronizar: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, Style]
+            Locked = True
+            Size.Width = 542.000000000000000000
+            Size.Height = 47.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF150B36
+            TextSettings.HorzAlign = Center
+            Text = 'Sincronizar'
+            TabOrder = 2
+          end
         end
       end
       object titDados: TTabItem
@@ -1206,19 +1363,38 @@ object fmrPrincipal: TfmrPrincipal
           Margins.Top = 3.000000000000000000
           Margins.Right = 3.000000000000000000
           Margins.Bottom = 3.000000000000000000
+ HEAD
+          Size.Width = 536.000000000000000000
+          Size.Height = 420.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          AutoHide = False
+          Viewport.Width = 531.000000000000000000
+          Viewport.Height = 415.000000000000000000
+
           Size.Width = 672.000000000000000000
           Size.Height = 892.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 1
           AutoHide = False
           Viewport.Width = 667.000000000000000000
+ robson/0815-subida-geral
           Viewport.Height = 887.000000000000000000
+
+          Viewport.Height = 822.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           object recFuncionario: TRectangle
             Align = Top
             Corners = []
             Fill.Color = claWhite
+ HEAD
+            Size.Width = 531.000000000000000000
+            Size.Height = 900.000000000000000000
+
             Size.Width = 667.000000000000000000
             Size.Height = 800.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.PlatformDefault = False
             Stroke.Color = claNull
             object recCarDescricao: TRectangle
@@ -1226,7 +1402,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 148.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1236,7 +1416,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1252,7 +1436,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1267,7 +1455,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 370.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1277,7 +1469,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1293,7 +1489,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1308,7 +1508,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 222.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1318,7 +1522,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1334,7 +1542,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1350,7 +1562,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 444.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1362,7 +1578,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1378,7 +1598,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1393,7 +1617,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 296.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1403,7 +1631,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1419,7 +1651,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1434,7 +1670,11 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 74.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1444,7 +1684,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1460,7 +1704,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1474,7 +1722,11 @@ object fmrPrincipal: TfmrPrincipal
               Align = Top
               Corners = [TopLeft, TopRight]
               Fill.Color = claWhite
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 75.000000000000000000
               Size.PlatformDefault = False
               Stroke.Kind = None
@@ -1486,7 +1738,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1502,7 +1758,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1518,8 +1778,16 @@ object fmrPrincipal: TfmrPrincipal
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
               Position.Y = 518.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
               Size.Width = 667.000000000000000000
+ robson/0815-subida-geral
               Size.Height = 75.000000000000000000
+
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+              Size.Height = 100.000000000000000000
+ main
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1530,7 +1798,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1546,8 +1818,16 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ robson/0815-subida-geral
                 Size.Height = 52.000000000000000000
+
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+                Size.Height = 77.000000000000000000
+ main
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1561,9 +1841,19 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
+ robson/0815-subida-geral
               Position.Y = 740.000000000000000000
               Size.Width = 667.000000000000000000
               Size.Height = 75.000000000000000000
+
+              Position.Y = 815.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
+              Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+              Size.Height = 100.000000000000000000
+ main
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1578,7 +1868,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1594,8 +1888,16 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ robson/0815-subida-geral
                 Size.Height = 52.000000000000000000
+
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+                Size.Height = 77.000000000000000000
+ main
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1611,9 +1913,19 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
+ robson/0815-subida-geral
               Position.Y = 592.000000000000000000
               Size.Width = 667.000000000000000000
               Size.Height = 75.000000000000000000
+
+              Position.Y = 617.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
+              Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+              Size.Height = 100.000000000000000000
+ main
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1628,7 +1940,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1644,8 +1960,16 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ robson/0815-subida-geral
                 Size.Height = 52.000000000000000000
+
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+                Size.Height = 77.000000000000000000
+ main
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1659,9 +1983,19 @@ object fmrPrincipal: TfmrPrincipal
               Corners = [BottomLeft, BottomRight]
               Fill.Color = claWhite
               Margins.Top = -1.000000000000000000
+ robson/0815-subida-geral
               Position.Y = 666.000000000000000000
               Size.Width = 667.000000000000000000
               Size.Height = 75.000000000000000000
+
+              Position.Y = 716.000000000000000000
+ HEAD
+              Size.Width = 531.000000000000000000
+
+              Size.Width = 667.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+              Size.Height = 100.000000000000000000
+ main
               Size.PlatformDefault = False
               Stroke.Kind = None
               XRadius = 10.000000000000000000
@@ -1676,7 +2010,11 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Position.X = 10.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
                 Size.Height = 20.000000000000000000
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
@@ -1692,6 +2030,9 @@ object fmrPrincipal: TfmrPrincipal
                 Locked = True
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
+ HEAD
+                Size.Width = 521.000000000000000000
+
                 Size.Width = 657.000000000000000000
                 Size.Height = 52.000000000000000000
                 Size.PlatformDefault = False
@@ -1741,7 +2082,12 @@ object fmrPrincipal: TfmrPrincipal
                 Margins.Left = 10.000000000000000000
                 Margins.Top = 3.000000000000000000
                 Size.Width = 657.000000000000000000
+ robson/0815-subida-geral
                 Size.Height = 52.000000000000000000
+
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+                Size.Height = 77.000000000000000000
+ main
                 Size.PlatformDefault = False
                 TextSettings.Font.Size = 16.000000000000000000
                 TextSettings.FontColor = xFF383838
@@ -1758,8 +2104,17 @@ object fmrPrincipal: TfmrPrincipal
           Fill.Color = claWhite
           Margins.Top = 6.000000000000000000
           Margins.Bottom = 6.000000000000000000
+ robson/0815-subida-geral
           Position.Y = 944.000000000000000000
+
+ HEAD
+          Position.Y = 472.000000000000000000
+          Size.Width = 542.000000000000000000
+
+          Position.Y = 879.000000000000000000
+ main
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 60.000000000000000000
           Size.PlatformDefault = False
           Stroke.Kind = None
@@ -1772,7 +2127,11 @@ object fmrPrincipal: TfmrPrincipal
             Margins.Top = 6.000000000000000000
             Margins.Right = 20.000000000000000000
             Margins.Bottom = 6.000000000000000000
+ HEAD
+            Size.Width = 502.000000000000000000
+
             Size.Width = 638.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
             Stroke.Kind = None
@@ -1781,7 +2140,11 @@ object fmrPrincipal: TfmrPrincipal
               Align = Client
               StyledSettings = [Family, Size, Style]
               Locked = True
+ HEAD
+              Size.Width = 502.000000000000000000
+
               Size.Width = 638.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
               Size.Height = 48.000000000000000000
               Size.PlatformDefault = False
               TextSettings.FontColor = xFF150B36
@@ -1795,7 +2158,11 @@ object fmrPrincipal: TfmrPrincipal
           Align = Top
           StyledSettings = []
           HelpContext = 20
+ HEAD
+          Size.Width = 542.000000000000000000
+
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
@@ -1824,7 +2191,11 @@ object fmrPrincipal: TfmrPrincipal
         object labAdvertencia: TLabel
           Align = Top
           StyledSettings = []
+ HEAD
+          Size.Width = 542.000000000000000000
+
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
@@ -1845,8 +2216,17 @@ object fmrPrincipal: TfmrPrincipal
           ItemSpaces.Right = 0.000000000000000000
           Align = Client
           Margins.Bottom = 20.000000000000000000
+ HEAD
+          Size.Width = 542.000000000000000000
+          Size.Height = 478.000000000000000000
+
           Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
           Size.Height = 950.000000000000000000
+
+          Size.Height = 885.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           Size.PlatformDefault = False
           TabOrder = 4
           ItemAppearance.ItemHeight = 120
@@ -2046,7 +2426,11 @@ object fmrPrincipal: TfmrPrincipal
           XRadius = 20.000000000000000000
           YRadius = 20.000000000000000000
           object dedData: TDateEdit
+ HEAD
+            Date = 45883.000000000000000000
+
             Date = 45884.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
             TodayDefault = True
             Align = Top
             Margins.Left = 20.000000000000000000
@@ -2184,8 +2568,17 @@ object fmrPrincipal: TfmrPrincipal
           Align = Client
           Corners = []
           Fill.Color = claWhite
+ HEAD
+          Size.Width = 542.000000000000000000
+          Size.Height = 498.000000000000000000
+
           Size.Width = 678.000000000000000000
+ robson/0815-subida-geral
           Size.Height = 970.000000000000000000
+
+          Size.Height = 905.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
           Size.PlatformDefault = False
           Stroke.Kind = None
           Stroke.Thickness = 0.000000000000000000
@@ -2193,7 +2586,11 @@ object fmrPrincipal: TfmrPrincipal
         object labSolicitarAjuste: TLabel
           Align = Top
           StyledSettings = []
+ HEAD
+          Size.Width = 542.000000000000000000
+
           Size.Width = 678.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 24.000000000000000000
@@ -4361,8 +4758,17 @@ object fmrPrincipal: TfmrPrincipal
       HitTest = False
       MarginWrapMode = Original
       Opacity = 0.070000000298023220
+ HEAD
+      Size.Width = 562.000000000000000000
+      Size.Height = 558.000000000000000000
+
       Size.Width = 698.000000000000000000
+ robson/0815-subida-geral
       Size.Height = 1030.000000000000000000
+
+      Size.Height = 965.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
+ main
       Size.PlatformDefault = False
     end
     object recLigarGPS: TRectangle
@@ -4422,7 +4828,11 @@ object fmrPrincipal: TfmrPrincipal
     Corners = []
     Fill.Color = xFF190539
     Position.Y = 66.000000000000000000
+ HEAD
+    Size.Width = 562.000000000000000000
+
     Size.Width = 698.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
     Size.Height = 66.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -4432,7 +4842,11 @@ object fmrPrincipal: TfmrPrincipal
       StyledSettings = [Family]
       Margins.Left = 10.000000000000000000
       Margins.Bottom = 6.000000000000000000
+ HEAD
+      Size.Width = 494.000000000000000000
+
       Size.Width = 630.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
       Size.Height = 60.000000000000000000
       Size.PlatformDefault = False
       TextSettings.FontColor = claWhite
@@ -4444,7 +4858,11 @@ object fmrPrincipal: TfmrPrincipal
       AutoSize = True
       StyledSettings = [Family]
       Margins.Right = 10.000000000000000000
+ HEAD
+      Position.X = 504.000000000000000000
+
       Position.X = 640.000000000000000000
+ 13de7b92e7ff412ec91c051d3785c6134c2899ad
       Size.Width = 48.000000000000000000
       Size.Height = 66.000000000000000000
       Size.PlatformDefault = False
