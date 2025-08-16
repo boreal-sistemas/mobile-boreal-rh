@@ -4,7 +4,7 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'">ZF523SDNM4</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android'">127.0.0.1:5565</DeviceId>
         <DeviceId Condition="'$(Platform)'=='Android64'">ZF523SDNM4</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
@@ -299,15 +299,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="..\Release\32\libBoreal.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>Boreal\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libBoreal.so</RemoteName>
-            <DeployClass>ProjectOutput_Android32</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="..\Icones\aviso.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>Boreal\assets\internal\</RemoteDir>
             <RemoteName>aviso.png</RemoteName>
@@ -501,6 +492,15 @@
         <DeployFile Include="..\Icones\Captura 3.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>Boreal\assets\internal\</RemoteDir>
             <RemoteName>Captura 3.png</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="..\SQLite\AppBoreal.db" Condition="'$(Config)'=='Release'">
+            <RemoteDir>Boreal\</RemoteDir>
+            <RemoteName>AppBoreal.db</RemoteName>
             <DeployClass>File</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>

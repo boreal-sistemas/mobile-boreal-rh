@@ -40,7 +40,7 @@ object dmoApp: TdmoApp
   end
   object RESTClient: TRESTClient
     Authenticator = HTTPBasicAuthenticator
-    BaseURL = 'http://borealrh.com.br:8082'
+    BaseURL = 'http://sistemaboreal.com.br:8070'
     Params = <>
     ConnectTimeout = 60000
     SynchronizedEvents = False

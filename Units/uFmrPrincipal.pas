@@ -3370,65 +3370,7 @@ begin
         recEventosJornada.Visible:= True;
       end);
     end;
-<<<<<<< HEAD
   end);
-=======
-    //Listando os eventos
-    with qry do
-    begin
-      //Criar os componentes de conexão com a API
-      RESTRequestE.Resource:= 'ReceberJornada';
-      //Receber eventos da API
-      try
-        RESTRequestE.Params.Clear;
-        RESTRequestE.AddParameter('usuBancoDeDados', dmoApp.usuBancoDeDados);
-        RESTRequestE.AddParameter('funCod', IntToStr(dmoApp.funCod));
-        RESTRequestE.Execute;
-      except
-        TThread.Synchronize(TThread.CurrentThread,
-        procedure()
-        begin
-          msg1.Aviso('Falha de conexão', 'Verifique sua conexão e tente novamente mais tarde.');
-        end);
-        Exit;
-      end;
-      json:= RESTRequestE.Response.JSONValue.ToString;
-      jsonObj:= TJsonObject.ParseJSONValue(TEncoding.UTF8.GetBytes(json),0) as TJsonObject;
-      jsonArray:= TJSONArray(jsonObj.Values['ReceberJornada']);
-      //Gravar eventos no SQLite
-      for i := 0 to Pred(jsonArray.Count) do
-      begin
-        jsonRecord:= TJSONObject(jsonArray.Items[i]);
-        Close;
-        SQL.Clear;
-        SQL.Add('SELECT ejoCod FROM Jornada WHERE funCod = :pFunCod AND TRIM(strftime(''%Y'', jorDataHora) || ''-'' || strftime(''%m'', jorDataHora) || ''-'' || strftime(''%d'', jorDataHora) || '' '' || strftime(''%H'', jorDataHora) || '':'' || strftime(''%M'', jorDataHora)) LIKE :pJorDataHora');
-        ParamByName('pFunCod').Value:= dmoAPP.funCod;
-        ParamByName('pJorDataHora').Text:= FormatDateTime('YYYY-MM-DD HH:MM', StrToDateTime(Trim(jsonRecord.GetValue('jorDataHora').Value)));
-        Open;
-        if RecordCount = 0 then
-        begin
-          Close;
-          SQL.Clear;
-          SQL.Add('INSERT INTO Jornada');
-          SQL.Add('(funCod, jorDataHora, ejoCod, jorSincronizado)');
-          SQL.Add('VALUES(:PfunCod, :PjorDataHora, :PejoCod, :PjorSincronizado)');
-          ParamByName('PfunCod').Value:= dmoAPP.funCod;
-          ParamByName('PjorDataHora').Value:= StrToDateTime(jsonRecord.GetValue('jorDataHora').Value);
-          ParamByName('PejoCod').Value:= StrToInt(jsonRecord.GetValue('ejoCod').Value);
-          ParamByName('PjorSincronizado').Value:= True;
-          ExecSQL;
-        end;
-      end;
-    end;
-    TThread.Synchronize(TThread.CurrentThread,
-    procedure()
-    begin
-      CarregarHistorico;
-      UltimoEvento;
-      Carregar(False);
-    end);
-  end).Start;
->>>>>>> 7c88dc9 (Colocado novamente o botão de sincronização para a Sigma.)
 end;
 
 //PUBLIC
