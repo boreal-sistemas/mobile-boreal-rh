@@ -1,1 +1,205 @@
-/* boreal global css */
+@font-face {
+	font-family: 'Inter';
+	src: url('https://cdn.jsdelivr.net/gh/boreal-sistemas/mobile-boreal-rh@main/assets/fonts/Inter-Regular.woff2?v=20260522') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('https://cdn.jsdelivr.net/gh/boreal-sistemas/mobile-boreal-rh@main/assets/fonts/Inter-Medium.woff2?v=20260522') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('https://cdn.jsdelivr.net/gh/boreal-sistemas/mobile-boreal-rh@main/assets/fonts/Inter-SemiBold.woff2?v=20260522') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src: url('https://cdn.jsdelivr.net/gh/boreal-sistemas/mobile-boreal-rh@main/assets/fonts/Inter-Bold.woff2?v=20260522') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+html,
+body,
+.x-body,
+.x-component,
+.x-panel,
+.x-panel-body,
+.x-form-item,
+.x-form-item-label,
+.x-form-field,
+.x-form-text,
+.x-btn,
+.x-btn-inner,
+.x-grid-cell,
+.x-grid-cell-inner,
+.x-column-header,
+.x-column-header-text,
+.x-tab,
+.x-tab-inner,
+.x-menu-item,
+.x-menu-item-text,
+.x-treelist-nav,
+.x-treelist-nav .x-treelist-item-text,
+.x-window,
+.x-window-header,
+.x-window-body,
+.x-toolbar,
+.x-toolbar-text,
+.x-label,
+.x-form-display-field,
+.x-box-item,
+.x-container,
+.x-boundlist,
+.x-boundlist-item,
+.x-datepicker,
+.x-datepicker-cell,
+.x-datepicker-date,
+td[id$="_id_td"],
+td[id$="_id_td"] * {
+	font-family: 'Inter', Arial, sans-serif !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+.btnAzul {
+	background: #3498db;
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	border-radius: 8px;
+	font-family: 'Inter', Arial, sans-serif !important;
+	font-weight: 500;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+}
+
+.btnAzul:hover {
+	background: #3cb0fd;
+	background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+	text-decoration: none;
+}
+
+.ArredondarImagem {
+	border-radius: 50%;
+}
+
+.arrPanUsuario {
+	border-radius: 20px 20px 20px 20px;
+}
+
+.arrPanMenu {
+	border-radius: 5px 5px 5px 5px;
+}
+
+.arrPanKPI {
+	border-radius: 8px 8px 8px 8px;
+	box-shadow: 3px 3px 3px Gray;
+}
+
+.arrPanLogin {
+	border-radius: 3px 3px 3px 3px;
+}
+
+.Sombra {
+	box-shadow: 0px 2px 2px Gray;
+}
+
+.Aredondar {
+	border-radius: 5px;
+}
+
+.x-treelist-nav .x-treelist-item-text {
+	font-family: 'Inter', Arial, sans-serif !important;
+	font-size: 11px;
+	font-weight: 400;
+	color: White;
+	margin-right: -5px !important;
+}
+
+.x-treelist-nav .x-treelist-item {
+	color: Black;
+}
+
+.panCabecalho {
+	box-shadow: 0px 1px 1px Black;
+}
+
+.PageControl {
+	border-style: solid;
+	border-color: #ffffff;
+}
+
+.panCorpo {
+	border-radius: 3px 3px 3px 3px;
+	box-shadow: 0px 0px 0px 1px #bbbbbb;
+}
+
+.panData {
+	border-radius: 5px;
+	box-shadow: 0px 2px 2px Black;
+}
+
+.Grid {
+	border-radius: 5px;
+	box-shadow: 0px 0px 0px 1px Silver;
+}
+
+.btnComum {
+	border-width: 0;
+	border-color: #836FFF;
+	border-radius: 10px;
+	color: #fff !important;
+	background: #836FFF !important;
+}
+
+.btnMenuLateral {
+	background: #4E4032 !important;
+	color: #fff !important;
+	border-radius: 3px 3px 3px 3px;
+	border-color: #4E4032;
+	-webkit-transition: background 0.5s ease-in-out;
+	transition: background 0.5s ease-in-out;
+}
+
+.Label {
+	vertical-align: middle;
+	text-align: center;
+	display: table-cell;
+	position: relative !important;
+}
+
+.ListBox {
+	border-width: 0;
+	border-radius: 5px;
+}
+
+.btnTeclado {
+	background: #0074C3 !important;
+	color: #fff !important;
+	border-radius: 20px 20px 20px 20px;
+	border-color: #0074C3;
+	-webkit-transition: background 0.5s ease-in-out;
+	transition: background 0.5s ease-in-out;
+}
+
+.btnMenu {
+	background: #d9d9db !important;
+	color: #fff !important;
+	border-radius: 25px 25px 25px 25px;
+	border-color: #d9d9db;
+	-webkit-transition: background 0.5s ease-in-out;
+	transition: background 0.5s ease-in-out;
+}
