@@ -1,0 +1,20 @@
+name: Atualizar CSS Global no CDN
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'assets/css/boreal-global.css'
+
+jobs:
+  limpar-cache-jsdelivr:
+    name: Limpar cache do jsDelivr
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Atualizar boreal-global.css no CDN
+        run: |
+          curl --fail --silent --show-error \
+            "https://purge.jsdelivr.net/gh/boreal-sistemas/mobile-boreal-rh@main/assets/css/boreal-global.css"
