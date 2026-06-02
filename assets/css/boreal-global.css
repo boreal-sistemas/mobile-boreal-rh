@@ -499,3 +499,33 @@ body.tema-escuro .btnTeclado {
 	border-color: #0967a7 !important;
 	color: #ffffff !important;
 }
+/* ============================================================
+   Modo escuro - botões padrão UniGUI
+   ============================================================ */
+
+body.tema-escuro .x-btn {
+	background: #1b2330 !important;
+	background-image: none !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-btn-inner {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-btn-over {
+	background: #273346 !important;
+	background-image: none !important;
+	border-color: #3a475c !important;
+}
+
+body.tema-escuro .x-btn-pressed,
+body.tema-escuro .x-btn.x-btn-pressed {
+	background: #36465e !important;
+	background-image: none !important;
+	border-color: #465a74 !important;
+}
+
+body.tema-escuro .x-btn-icon-el {
+	color: #e7edf5 !important;
+}
