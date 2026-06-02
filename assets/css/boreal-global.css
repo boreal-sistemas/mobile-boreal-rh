@@ -66,6 +66,8 @@ body,
 .x-datepicker,
 .x-datepicker-cell,
 .x-datepicker-date,
+.x-form-cb-label,
+.x-form-cb-label-default,
 td[id$="_id_td"],
 td[id$="_id_td"] * {
 	font-family: 'Inter', Arial, sans-serif !important;
@@ -231,24 +233,9 @@ body.tema-escuro .x-body {
 	color-scheme: dark;
 }
 
-body.tema-escuro .panCabecalho {
-	background-color: #171d27 !important;
-	border-color: transparent !important;
-	box-shadow: none !important;
-}
-
-body.tema-escuro .panCorpo,
-body.tema-escuro .PageControl {
-	background-color: #0f141d !important;
-	border: 0 !important;
-	border-color: transparent !important;
-	border-style: none !important;
-	box-shadow: none !important;
-}
-
 /* ============================================================
-   Modo escuro - fundos gerais UniGUI
-   Remove contornos dos containers e frames
+   Modo escuro - panels, frames e containers sem contorno
+   Remove a linha ao redor dos frames
    ============================================================ */
 
 body.tema-escuro .x-panel,
@@ -261,8 +248,33 @@ body.tema-escuro .x-fit-item,
 body.tema-escuro .x-autocontainer-innerCt {
 	background-color: #0f141d !important;
 	color: #e7edf5 !important;
+	border: 0 !important;
+	border-width: 0 !important;
+	border-color: transparent !important;
+	border-style: none !important;
+	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+body.tema-escuro .panCabecalho {
+	background-color: #0f141d !important;
+	border: 0 !important;
 	border-color: transparent !important;
 	box-shadow: none !important;
+	outline: 0 !important;
+}
+
+body.tema-escuro .panCorpo,
+body.tema-escuro .panCorpo > .x-panel-body,
+body.tema-escuro .PageControl,
+body.tema-escuro .PageControl > .x-panel-body {
+	background-color: #0f141d !important;
+	border: 0 !important;
+	border-width: 0 !important;
+	border-color: transparent !important;
+	border-style: none !important;
+	box-shadow: none !important;
+	outline: 0 !important;
 }
 
 body.tema-escuro .containerAlternadorTema,
@@ -276,14 +288,16 @@ body.tema-escuro .containerAlternadorTema iframe {
 }
 
 /* ============================================================
-   Modo escuro - cards e painéis que devem manter separação
+   Modo escuro - cards e painéis com separação visual
    ============================================================ */
 
 body.tema-escuro .arrPanKPI,
 body.tema-escuro .panData {
 	background-color: #171d27 !important;
-	border-color: #273142 !important;
-	box-shadow: 0 0 0 1px #273142 !important;
+	border: 1px solid #273142 !important;
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.03),
+		0 5px 14px rgba(0, 0, 0, 0.20) !important;
 }
 
 /* ============================================================
@@ -301,10 +315,10 @@ body.tema-escuro td[id$="_id_td"] * {
 
 /* ============================================================
    Modo escuro - inputs, combos e lookup
+   Não usar .x-form-field aqui, pois radio também possui essa classe
    ============================================================ */
 
 body.tema-escuro .x-form-text,
-body.tema-escuro .x-form-field,
 body.tema-escuro .x-form-trigger-wrap,
 body.tema-escuro .x-form-text-wrap,
 body.tema-escuro .x-form-trigger-default {
@@ -324,7 +338,8 @@ body.tema-escuro .x-form-trigger {
 
 body.tema-escuro .x-form-trigger-wrap-focus,
 body.tema-escuro .x-form-item-body:focus-within .x-form-trigger-wrap {
-	border-color: #4f6582 !important;
+	border-color: #6750b7 !important;
+	box-shadow: 0 0 0 2px rgba(111, 76, 201, 0.14) !important;
 }
 
 body.tema-escuro .x-boundlist {
@@ -343,6 +358,178 @@ body.tema-escuro .x-boundlist-item-over,
 body.tema-escuro .x-boundlist-selected {
 	background-color: #273346 !important;
 	color: #ffffff !important;
+}
+
+/* ============================================================
+   Modo escuro - radio buttons
+   ============================================================ */
+
+body.tema-escuro .x-form-item:has(input[type="radio"]),
+body.tema-escuro .x-form-item:has(input[type="radio"]) .x-form-item-body,
+body.tema-escuro .x-form-item:has(input[type="radio"]) .x-form-cb-wrap,
+body.tema-escuro .x-form-item:has(input[type="radio"]) .x-form-cb-wrap-inner {
+	height: 24px !important;
+	min-height: 24px !important;
+	line-height: 24px !important;
+	overflow: visible !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	background-image: none !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"]) .x-form-cb-wrap-inner {
+	display: inline-flex !important;
+	align-items: center !important;
+	gap: 6px !important;
+	vertical-align: middle !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default {
+	position: relative !important;
+	display: inline-block !important;
+	flex: 0 0 16px !important;
+	width: 16px !important;
+	height: 16px !important;
+	min-width: 16px !important;
+	min-height: 16px !important;
+	margin: 0 !important;
+	top: auto !important;
+	vertical-align: middle !important;
+	background: rgba(255, 255, 255, 0.04) !important;
+	background-color: rgba(255, 255, 255, 0.04) !important;
+	background-image: none !important;
+	border: 1px solid rgba(173, 191, 220, 0.48) !important;
+	border-radius: 50% !important;
+	box-shadow:
+		inset 0 1px 1px rgba(255, 255, 255, 0.10),
+		0 2px 5px rgba(0, 0, 0, 0.20) !important;
+	overflow: hidden !important;
+	cursor: pointer !important;
+	transition:
+		border-color 0.20s ease,
+		background 0.20s ease,
+		box-shadow 0.20s ease,
+		transform 0.16s ease !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default input[type="radio"] {
+	position: absolute !important;
+	inset: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	margin: 0 !important;
+	opacity: 0 !important;
+	cursor: pointer !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default::after {
+	content: '' !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	width: 7px !important;
+	height: 7px !important;
+	border-radius: 50% !important;
+	background: #ffffff !important;
+	opacity: 0 !important;
+	transform: translate(-50%, -50%) scale(0.35) !important;
+	box-shadow: 0 0 7px rgba(211, 199, 255, 0.80) !important;
+	pointer-events: none !important;
+	transition:
+		opacity 0.18s ease,
+		transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default:has(input:checked) {
+	background:
+		linear-gradient(
+			135deg,
+			rgba(139, 103, 236, 0.92),
+			rgba(75, 43, 146, 0.94)
+		) !important;
+	background-image:
+		linear-gradient(
+			135deg,
+			rgba(139, 103, 236, 0.92),
+			rgba(75, 43, 146, 0.94)
+		) !important;
+	border-color: rgba(184, 157, 255, 0.92) !important;
+	box-shadow:
+		inset 0 1px 1px rgba(255, 255, 255, 0.24),
+		0 0 0 3px rgba(119, 79, 210, 0.16),
+		0 0 11px rgba(119, 79, 210, 0.42) !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default:has(input:checked)::after {
+	opacity: 1 !important;
+	transform: translate(-50%, -50%) scale(1) !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-cb-wrap-inner:hover .x-form-radio.x-form-radio-default {
+	border-color: rgba(184, 157, 255, 0.92) !important;
+	box-shadow:
+		0 0 0 3px rgba(119, 79, 210, 0.13),
+		0 0 10px rgba(119, 79, 210, 0.30) !important;
+	transform: scale(1.05) !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-cb-label,
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-cb-label-default,
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-cb-label-after {
+	position: static !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	height: 24px !important;
+	min-height: 24px !important;
+	line-height: 24px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	vertical-align: middle !important;
+	white-space: nowrap !important;
+	overflow: visible !important;
+	background: transparent !important;
+	background-color: transparent !important;
+	background-image: none !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	color: #ccd7e7 !important;
+	font-family: 'Inter', Arial, sans-serif !important;
+	font-size: 12px !important;
+	font-weight: 500 !important;
+	text-shadow: none !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	cursor: pointer !important;
+	transition: color 0.20s ease !important;
+}
+
+body.tema-escuro .x-form-item:has(input:checked) .x-form-cb-label {
+	color: #ffffff !important;
+	font-weight: 600 !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-cb-wrap-inner:hover .x-form-cb-label {
+	color: #ffffff !important;
+}
+
+body.tema-escuro .x-form-item:has(input[type="radio"]) .x-item-disabled,
+body.tema-escuro .x-form-item:has(input[type="radio"])
+.x-form-radio.x-form-radio-default:has(input:disabled) {
+	opacity: 0.42 !important;
+	box-shadow: none !important;
+	transform: none !important;
 }
 
 /* ============================================================
@@ -513,7 +700,7 @@ body.tema-escuro .x-mask-msg-inner {
 }
 
 /* ============================================================
-   Modo escuro - TUniSpeedButton e botões padrão
+   Modo escuro - TUniSpeedButton e botões padrão cristalizados
    ============================================================ */
 
 body.tema-escuro .x-btn,
@@ -524,11 +711,31 @@ body.tema-escuro .x-btn-default-large,
 body.tema-escuro .x-btn-default-toolbar-small,
 body.tema-escuro .x-btn-default-toolbar-medium,
 body.tema-escuro .x-btn-default-toolbar-large {
-	background: #1b2330 !important;
-	background-color: #1b2330 !important;
-	background-image: none !important;
-	border: 1px solid #303b4c !important;
-	box-shadow: none !important;
+	background:
+		linear-gradient(
+			135deg,
+			rgba(39, 51, 70, 0.82),
+			rgba(21, 28, 39, 0.90)
+		) !important;
+	background-color: transparent !important;
+	background-image:
+		linear-gradient(
+			135deg,
+			rgba(39, 51, 70, 0.82),
+			rgba(21, 28, 39, 0.90)
+		) !important;
+	border: 1px solid rgba(139, 164, 198, 0.22) !important;
+	border-radius: 10px !important;
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.08),
+		0 4px 12px rgba(0, 0, 0, 0.24) !important;
+	backdrop-filter: blur(8px);
+	-webkit-backdrop-filter: blur(8px);
+	transition:
+		background 0.20s ease,
+		border-color 0.20s ease,
+		box-shadow 0.20s ease,
+		transform 0.15s ease !important;
 }
 
 body.tema-escuro .x-btn-wrap,
@@ -557,10 +764,13 @@ body.tema-escuro .x-btn-inner-default-large,
 body.tema-escuro .x-btn-inner-default-toolbar-small,
 body.tema-escuro .x-btn-inner-default-toolbar-medium,
 body.tema-escuro .x-btn-inner-default-toolbar-large {
-	color: #e7edf5 !important;
-	text-shadow: none !important;
+	color: #eaf2ff !important;
+	font-weight: 600 !important;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28) !important;
+	white-space: nowrap !important;
 }
 
+body.tema-escuro .x-btn:hover,
 body.tema-escuro .x-btn-over,
 body.tema-escuro .x-btn-default-small-over,
 body.tema-escuro .x-btn-default-medium-over,
@@ -568,22 +778,27 @@ body.tema-escuro .x-btn-default-large-over,
 body.tema-escuro .x-btn-default-toolbar-small-over,
 body.tema-escuro .x-btn-default-toolbar-medium-over,
 body.tema-escuro .x-btn-default-toolbar-large-over {
-	background: #273346 !important;
-	background-color: #273346 !important;
-	background-image: none !important;
-	border-color: #435169 !important;
+	background:
+		linear-gradient(
+			135deg,
+			rgba(74, 96, 132, 0.92),
+			rgba(35, 46, 65, 0.94)
+		) !important;
+	background-image:
+		linear-gradient(
+			135deg,
+			rgba(74, 96, 132, 0.92),
+			rgba(35, 46, 65, 0.94)
+		) !important;
+	border-color: rgba(151, 181, 224, 0.58) !important;
+	box-shadow:
+		inset 0 1px 0 rgba(255, 255, 255, 0.16),
+		0 7px 18px rgba(0, 0, 0, 0.34),
+		0 0 0 1px rgba(103, 139, 192, 0.12) !important;
+	transform: translateY(-1px);
 }
 
-body.tema-escuro .x-btn-focus,
-body.tema-escuro .x-btn-default-small-focus,
-body.tema-escuro .x-btn-default-medium-focus,
-body.tema-escuro .x-btn-default-large-focus {
-	background: #273346 !important;
-	background-color: #273346 !important;
-	background-image: none !important;
-	border-color: #526680 !important;
-}
-
+body.tema-escuro .x-btn:active,
 body.tema-escuro .x-btn-pressed,
 body.tema-escuro .x-btn-default-small-pressed,
 body.tema-escuro .x-btn-default-medium-pressed,
@@ -591,45 +806,102 @@ body.tema-escuro .x-btn-default-large-pressed,
 body.tema-escuro .x-btn-default-toolbar-small-pressed,
 body.tema-escuro .x-btn-default-toolbar-medium-pressed,
 body.tema-escuro .x-btn-default-toolbar-large-pressed {
-	background: #34445b !important;
-	background-color: #34445b !important;
-	background-image: none !important;
-	border-color: #526680 !important;
+	background:
+		linear-gradient(
+			135deg,
+			rgba(26, 34, 47, 0.96),
+			rgba(48, 63, 88, 0.90)
+		) !important;
+	background-image:
+		linear-gradient(
+			135deg,
+			rgba(26, 34, 47, 0.96),
+			rgba(48, 63, 88, 0.90)
+		) !important;
+	border-color: rgba(151, 181, 224, 0.44) !important;
+	box-shadow:
+		inset 0 2px 5px rgba(0, 0, 0, 0.28),
+		0 2px 7px rgba(0, 0, 0, 0.22) !important;
+	transform: translateY(1px);
 }
 
 body.tema-escuro .x-btn-disabled,
 body.tema-escuro .x-btn-default-small-disabled,
 body.tema-escuro .x-btn-default-medium-disabled,
 body.tema-escuro .x-btn-default-large-disabled {
-	background: #171d27 !important;
-	background-color: #171d27 !important;
-	background-image: none !important;
-	border-color: #273142 !important;
-	opacity: 0.60;
+	background:
+		linear-gradient(
+			135deg,
+			rgba(28, 35, 47, 0.55),
+			rgba(19, 25, 34, 0.60)
+		) !important;
+	background-image:
+		linear-gradient(
+			135deg,
+			rgba(28, 35, 47, 0.55),
+			rgba(19, 25, 34, 0.60)
+		) !important;
+	border-color: rgba(113, 128, 150, 0.16) !important;
+	box-shadow: none !important;
+	opacity: 0.48 !important;
+	transform: none !important;
 }
 
 /* ============================================================
-   Modo escuro - ícones dos TUniSpeedButton
+   Modo escuro - ícones brancos dos TUniSpeedButton
    ============================================================ */
 
-body.tema-escuro .x-btn-icon-el,
+body.tema-escuro .x-btn .x-btn-icon-el,
+body.tema-escuro .x-btn .x-btn-icon,
+body.tema-escuro .x-btn img,
 body.tema-escuro .x-btn-icon-el-default-small,
 body.tema-escuro .x-btn-icon-el-default-medium,
 body.tema-escuro .x-btn-icon-el-default-large,
 body.tema-escuro .x-btn-icon-el-default-toolbar-small {
-	opacity: 0.90;
+	filter:
+		brightness(0)
+		invert(1)
+		drop-shadow(0 1px 2px rgba(255, 255, 255, 0.14))
+		!important;
+	opacity: 0.88 !important;
+	transition:
+		filter 0.20s ease,
+		opacity 0.20s ease,
+		transform 0.20s ease
+		!important;
 }
 
-body.tema-escuro .x-btn-default-small .x-btn-icon-el,
-body.tema-escuro .x-btn-default-medium .x-btn-icon-el,
-body.tema-escuro .x-btn-default-large .x-btn-icon-el,
-body.tema-escuro .x-btn-default-toolbar-small .x-btn-icon-el {
-	filter: brightness(0) invert(1);
+body.tema-escuro .x-btn:hover .x-btn-icon-el,
+body.tema-escuro .x-btn:hover .x-btn-icon,
+body.tema-escuro .x-btn:hover img,
+body.tema-escuro .x-btn-over .x-btn-icon-el,
+body.tema-escuro .x-btn-default-small-over .x-btn-icon-el,
+body.tema-escuro .x-btn-default-medium-over .x-btn-icon-el,
+body.tema-escuro .x-btn-default-large-over .x-btn-icon-el {
+	filter:
+		brightness(0)
+		invert(1)
+		drop-shadow(0 0 5px rgba(190, 218, 255, 0.50))
+		!important;
+	opacity: 1 !important;
+	transform: scale(1.07);
+}
+
+body.tema-escuro .x-btn-disabled .x-btn-icon-el,
+body.tema-escuro .x-btn-disabled .x-btn-icon,
+body.tema-escuro .x-btn-disabled img,
+body.tema-escuro .x-btn-default-small-disabled .x-btn-icon-el {
+	filter:
+		brightness(0)
+		invert(1)
+		!important;
+	opacity: 0.32 !important;
+	transform: none !important;
 }
 
 /* ============================================================
    Modo escuro - componentes coloridos já existentes
-   Mantido depois dos botões genéricos para preservar suas cores
+   Mantido após botões genéricos para preservar as cores próprias
    ============================================================ */
 
 body.tema-escuro .btnAzul {
