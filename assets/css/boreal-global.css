@@ -205,6 +205,19 @@ td[id$="_id_td"] * {
 }
 
 /* ============================================================
+   Container externo do alternador de tema
+   ============================================================ */
+
+.containerAlternadorTema,
+.containerAlternadorTema .x-panel-body,
+.containerAlternadorTema iframe {
+	background: transparent !important;
+	background-color: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+/* ============================================================
    Modo escuro - estrutura geral
    ============================================================ */
 
@@ -235,37 +248,51 @@ body.tema-escuro .Grid {
 }
 
 /* ============================================================
-   Panels e textos
+   Modo escuro - fundos gerais UniGUI
    ============================================================ */
 
 body.tema-escuro .x-panel,
 body.tema-escuro .x-panel-body,
-body.tema-escuro .x-container {
+body.tema-escuro .x-container,
+body.tema-escuro .x-border-layout-ct,
+body.tema-escuro .x-fit-item,
+body.tema-escuro .x-autocontainer-innerCt,
+body.tema-escuro .x-panel-body-default {
+	background-color: #0f141d !important;
 	color: #e7edf5 !important;
 }
+
+body.tema-escuro .containerAlternadorTema,
+body.tema-escuro .containerAlternadorTema .x-panel-body,
+body.tema-escuro .containerAlternadorTema iframe {
+	background: transparent !important;
+	background-color: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+/* ============================================================
+   Modo escuro - textos
+   ============================================================ */
 
 body.tema-escuro .x-label,
 body.tema-escuro .x-form-item-label,
 body.tema-escuro .x-form-display-field,
+body.tema-escuro .x-toolbar-text,
 body.tema-escuro td[id$="_id_td"],
 body.tema-escuro td[id$="_id_td"] * {
 	color: #e7edf5 !important;
 }
 
-/* O container do switch precisa continuar transparente */
-body.tema-escuro .containerAlternadorTema,
-body.tema-escuro .containerAlternadorTema .x-panel-body {
-	background: transparent !important;
-	border: 0 !important;
-}
-
 /* ============================================================
-   Inputs, combos e lookup
+   Modo escuro - inputs, combos e lookup
    ============================================================ */
 
 body.tema-escuro .x-form-text,
 body.tema-escuro .x-form-field,
-body.tema-escuro .x-form-trigger-wrap {
+body.tema-escuro .x-form-trigger-wrap,
+body.tema-escuro .x-form-text-wrap,
+body.tema-escuro .x-form-trigger-default {
 	background-color: #171d27 !important;
 	color: #e7edf5 !important;
 	border-color: #303b4c !important;
@@ -299,18 +326,21 @@ body.tema-escuro .x-boundlist-selected {
 }
 
 /* ============================================================
-   Grid
+   Modo escuro - grid
    ============================================================ */
 
 body.tema-escuro .x-grid,
 body.tema-escuro .x-grid-body,
-body.tema-escuro .x-grid-view {
+body.tema-escuro .x-grid-view,
+body.tema-escuro .x-grid-item-container,
+body.tema-escuro .x-grid-table {
 	background-color: #121822 !important;
 	border-color: #273142 !important;
 }
 
 body.tema-escuro .x-column-header,
-body.tema-escuro .x-column-header-inner {
+body.tema-escuro .x-column-header-inner,
+body.tema-escuro .x-grid-header-ct {
 	background-color: #1b2330 !important;
 	color: #e7edf5 !important;
 	border-color: #303b4c !important;
@@ -326,6 +356,10 @@ body.tema-escuro .x-grid-cell {
 	background-color: #121822 !important;
 	color: #e7edf5 !important;
 	border-color: #222c3b !important;
+}
+
+body.tema-escuro .x-grid-row-alt .x-grid-cell {
+	background-color: #161d28 !important;
 }
 
 body.tema-escuro .x-grid-cell-inner {
@@ -344,7 +378,7 @@ body.tema-escuro .x-grid-row-selected .x-grid-cell {
 }
 
 /* ============================================================
-   Abas, menus e janelas
+   Modo escuro - abas, menus, toolbar e janelas
    ============================================================ */
 
 body.tema-escuro .x-tab-bar,
@@ -398,7 +432,7 @@ body.tema-escuro .x-window-header {
 }
 
 /* ============================================================
-   Calendário
+   Modo escuro - calendário
    ============================================================ */
 
 body.tema-escuro .x-datepicker,
@@ -423,7 +457,7 @@ body.tema-escuro .x-datepicker-selected {
 }
 
 /* ============================================================
-   Máscara de carregamento
+   Modo escuro - máscaras de carregamento
    ============================================================ */
 
 body.tema-escuro .x-mask {
@@ -439,7 +473,7 @@ body.tema-escuro .x-mask-msg-inner {
 }
 
 /* ============================================================
-   Componentes coloridos já existentes
+   Modo escuro - componentes coloridos já existentes
    ============================================================ */
 
 body.tema-escuro .btnMenuLateral {
