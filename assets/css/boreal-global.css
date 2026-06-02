@@ -529,3 +529,91 @@ body.tema-escuro .x-btn.x-btn-pressed {
 body.tema-escuro .x-btn-icon-el {
 	color: #e7edf5 !important;
 }
+/* ============================================================
+   Modo escuro - correção de bordas de panels
+   ============================================================ */
+
+body.tema-escuro .x-panel,
+body.tema-escuro .x-panel-body,
+body.tema-escuro .x-panel-default,
+body.tema-escuro .x-panel-body-default {
+	border-color: #273142 !important;
+}
+
+/* ============================================================
+   Modo escuro - TUniSpeedButton e botões padrão
+   ============================================================ */
+
+body.tema-escuro .x-btn,
+body.tema-escuro .x-btn-default-small,
+body.tema-escuro .x-btn-default-medium,
+body.tema-escuro .x-btn-default-large,
+body.tema-escuro .x-btn-default-toolbar-small,
+body.tema-escuro .x-btn-default-toolbar-medium,
+body.tema-escuro .x-btn-default-toolbar-large {
+	background: #1b2330 !important;
+	background-color: #1b2330 !important;
+	background-image: none !important;
+	border-color: #303b4c !important;
+	box-shadow: none !important;
+}
+
+body.tema-escuro .x-btn-inner,
+body.tema-escuro .x-btn-inner-default-small,
+body.tema-escuro .x-btn-inner-default-medium,
+body.tema-escuro .x-btn-inner-default-large,
+body.tema-escuro .x-btn-inner-default-toolbar-small,
+body.tema-escuro .x-btn-inner-default-toolbar-medium,
+body.tema-escuro .x-btn-inner-default-toolbar-large {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-btn-over,
+body.tema-escuro .x-btn-default-small-over,
+body.tema-escuro .x-btn-default-medium-over,
+body.tema-escuro .x-btn-default-large-over,
+body.tema-escuro .x-btn-default-toolbar-small-over,
+body.tema-escuro .x-btn-default-toolbar-medium-over,
+body.tema-escuro .x-btn-default-toolbar-large-over {
+	background: #273346 !important;
+	background-color: #273346 !important;
+	background-image: none !important;
+	border-color: #435169 !important;
+}
+
+body.tema-escuro .x-btn-pressed,
+body.tema-escuro .x-btn-default-small-pressed,
+body.tema-escuro .x-btn-default-medium-pressed,
+body.tema-escuro .x-btn-default-large-pressed,
+body.tema-escuro .x-btn-default-toolbar-small-pressed,
+body.tema-escuro .x-btn-default-toolbar-medium-pressed,
+body.tema-escuro .x-btn-default-toolbar-large-pressed {
+	background: #34445b !important;
+	background-color: #34445b !important;
+	background-image: none !important;
+	border-color: #526680 !important;
+}
+
+body.tema-escuro .x-btn-disabled,
+body.tema-escuro .x-btn-default-small-disabled,
+body.tema-escuro .x-btn-default-medium-disabled,
+body.tema-escuro .x-btn-default-large-disabled {
+	background: #171d27 !important;
+	background-color: #171d27 !important;
+	background-image: none !important;
+	border-color: #273142 !important;
+	opacity: 0.60;
+}
+
+/* ============================================================
+   Modo escuro - ícones dos TUniSpeedButton
+   ============================================================ */
+
+body.tema-escuro .x-btn-icon-el {
+	opacity: 0.90;
+}
+
+body.tema-escuro .x-btn-default-small .x-btn-icon-el,
+body.tema-escuro .x-btn-default-toolbar-small .x-btn-icon-el {
+	filter: brightness(0) invert(1);
+}
