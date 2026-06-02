@@ -210,6 +210,7 @@ td[id$="_id_td"] * {
 
 .containerAlternadorTema,
 .containerAlternadorTema .x-panel-body,
+.containerAlternadorTema .x-autocontainer-innerCt,
 .containerAlternadorTema iframe {
 	background: transparent !important;
 	background-color: transparent !important;
@@ -221,6 +222,8 @@ td[id$="_id_td"] * {
    Modo escuro - estrutura geral
    ============================================================ */
 
+html.tema-escuro,
+html.tema-escuro body,
 body.tema-escuro,
 body.tema-escuro .x-body {
 	background-color: #0f141d !important;
@@ -230,45 +233,57 @@ body.tema-escuro .x-body {
 
 body.tema-escuro .panCabecalho {
 	background-color: #171d27 !important;
-	box-shadow: 0 1px 1px #090c12 !important;
+	border-color: transparent !important;
+	box-shadow: none !important;
 }
 
 body.tema-escuro .panCorpo,
 body.tema-escuro .PageControl {
 	background-color: #0f141d !important;
-	border-color: #273142 !important;
-	box-shadow: 0 0 0 1px #273142 !important;
-}
-
-body.tema-escuro .arrPanKPI,
-body.tema-escuro .panData,
-body.tema-escuro .Grid {
-	border-color: #273142 !important;
-	box-shadow: 0 0 0 1px #273142 !important;
+	border: 0 !important;
+	border-color: transparent !important;
+	border-style: none !important;
+	box-shadow: none !important;
 }
 
 /* ============================================================
    Modo escuro - fundos gerais UniGUI
+   Remove contornos dos containers e frames
    ============================================================ */
 
 body.tema-escuro .x-panel,
 body.tema-escuro .x-panel-body,
+body.tema-escuro .x-panel-default,
+body.tema-escuro .x-panel-body-default,
 body.tema-escuro .x-container,
 body.tema-escuro .x-border-layout-ct,
 body.tema-escuro .x-fit-item,
-body.tema-escuro .x-autocontainer-innerCt,
-body.tema-escuro .x-panel-body-default {
+body.tema-escuro .x-autocontainer-innerCt {
 	background-color: #0f141d !important;
 	color: #e7edf5 !important;
+	border-color: transparent !important;
+	box-shadow: none !important;
 }
 
 body.tema-escuro .containerAlternadorTema,
 body.tema-escuro .containerAlternadorTema .x-panel-body,
+body.tema-escuro .containerAlternadorTema .x-autocontainer-innerCt,
 body.tema-escuro .containerAlternadorTema iframe {
 	background: transparent !important;
 	background-color: transparent !important;
 	border: 0 !important;
 	box-shadow: none !important;
+}
+
+/* ============================================================
+   Modo escuro - cards e painéis que devem manter separação
+   ============================================================ */
+
+body.tema-escuro .arrPanKPI,
+body.tema-escuro .panData {
+	background-color: #171d27 !important;
+	border-color: #273142 !important;
+	box-shadow: 0 0 0 1px #273142 !important;
 }
 
 /* ============================================================
@@ -307,6 +322,11 @@ body.tema-escuro .x-form-trigger {
 	border-color: #303b4c !important;
 }
 
+body.tema-escuro .x-form-trigger-wrap-focus,
+body.tema-escuro .x-form-item-body:focus-within .x-form-trigger-wrap {
+	border-color: #4f6582 !important;
+}
+
 body.tema-escuro .x-boundlist {
 	background-color: #171d27 !important;
 	border-color: #303b4c !important;
@@ -329,6 +349,7 @@ body.tema-escuro .x-boundlist-selected {
    Modo escuro - grid
    ============================================================ */
 
+body.tema-escuro .Grid,
 body.tema-escuro .x-grid,
 body.tema-escuro .x-grid-body,
 body.tema-escuro .x-grid-view,
@@ -336,6 +357,12 @@ body.tema-escuro .x-grid-item-container,
 body.tema-escuro .x-grid-table {
 	background-color: #121822 !important;
 	border-color: #273142 !important;
+	box-shadow: none !important;
+}
+
+body.tema-escuro .Grid,
+body.tema-escuro .x-grid-body {
+	border: 1px solid #273142 !important;
 }
 
 body.tema-escuro .x-column-header,
@@ -377,6 +404,11 @@ body.tema-escuro .x-grid-row-selected .x-grid-cell {
 	color: #ffffff !important;
 }
 
+body.tema-escuro .x-grid-empty {
+	background-color: #121822 !important;
+	color: #98a2b3 !important;
+}
+
 /* ============================================================
    Modo escuro - abas, menus, toolbar e janelas
    ============================================================ */
@@ -389,6 +421,7 @@ body.tema-escuro .x-toolbar {
 
 body.tema-escuro .x-tab {
 	background-color: #1b2330 !important;
+	background-image: none !important;
 	border-color: #303b4c !important;
 }
 
@@ -398,6 +431,7 @@ body.tema-escuro .x-tab-inner {
 
 body.tema-escuro .x-tab-active {
 	background-color: #29384d !important;
+	background-image: none !important;
 }
 
 body.tema-escuro .x-tab-active .x-tab-inner {
@@ -407,6 +441,7 @@ body.tema-escuro .x-tab-active .x-tab-inner {
 body.tema-escuro .x-menu {
 	background-color: #171d27 !important;
 	border-color: #303b4c !important;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34) !important;
 }
 
 body.tema-escuro .x-menu-item,
@@ -423,6 +458,11 @@ body.tema-escuro .x-window-body {
 	background-color: #171d27 !important;
 	color: #e7edf5 !important;
 	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-window {
+	border: 1px solid #303b4c !important;
+	box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45) !important;
 }
 
 body.tema-escuro .x-window-header {
@@ -473,78 +513,11 @@ body.tema-escuro .x-mask-msg-inner {
 }
 
 /* ============================================================
-   Modo escuro - componentes coloridos já existentes
-   ============================================================ */
-
-body.tema-escuro .btnMenuLateral {
-	background: #352e29 !important;
-	border-color: #352e29 !important;
-	color: #ffffff !important;
-}
-
-body.tema-escuro .btnMenu {
-	background: #273142 !important;
-	border-color: #273142 !important;
-	color: #ffffff !important;
-}
-
-body.tema-escuro .btnComum {
-	background: #6457d6 !important;
-	border-color: #6457d6 !important;
-	color: #ffffff !important;
-}
-
-body.tema-escuro .btnTeclado {
-	background: #0967a7 !important;
-	border-color: #0967a7 !important;
-	color: #ffffff !important;
-}
-/* ============================================================
-   Modo escuro - botões padrão UniGUI
-   ============================================================ */
-
-body.tema-escuro .x-btn {
-	background: #1b2330 !important;
-	background-image: none !important;
-	border-color: #303b4c !important;
-}
-
-body.tema-escuro .x-btn-inner {
-	color: #e7edf5 !important;
-}
-
-body.tema-escuro .x-btn-over {
-	background: #273346 !important;
-	background-image: none !important;
-	border-color: #3a475c !important;
-}
-
-body.tema-escuro .x-btn-pressed,
-body.tema-escuro .x-btn.x-btn-pressed {
-	background: #36465e !important;
-	background-image: none !important;
-	border-color: #465a74 !important;
-}
-
-body.tema-escuro .x-btn-icon-el {
-	color: #e7edf5 !important;
-}
-/* ============================================================
-   Modo escuro - correção de bordas de panels
-   ============================================================ */
-
-body.tema-escuro .x-panel,
-body.tema-escuro .x-panel-body,
-body.tema-escuro .x-panel-default,
-body.tema-escuro .x-panel-body-default {
-	border-color: #273142 !important;
-}
-
-/* ============================================================
    Modo escuro - TUniSpeedButton e botões padrão
    ============================================================ */
 
 body.tema-escuro .x-btn,
+body.tema-escuro a.x-btn,
 body.tema-escuro .x-btn-default-small,
 body.tema-escuro .x-btn-default-medium,
 body.tema-escuro .x-btn-default-large,
@@ -554,8 +527,27 @@ body.tema-escuro .x-btn-default-toolbar-large {
 	background: #1b2330 !important;
 	background-color: #1b2330 !important;
 	background-image: none !important;
-	border-color: #303b4c !important;
+	border: 1px solid #303b4c !important;
 	box-shadow: none !important;
+}
+
+body.tema-escuro .x-btn-wrap,
+body.tema-escuro .x-btn-button,
+body.tema-escuro .x-btn-wrap-default-small,
+body.tema-escuro .x-btn-wrap-default-medium,
+body.tema-escuro .x-btn-wrap-default-large,
+body.tema-escuro .x-btn-button-default-small,
+body.tema-escuro .x-btn-button-default-medium,
+body.tema-escuro .x-btn-button-default-large,
+body.tema-escuro .x-btn-wrap-default-toolbar-small,
+body.tema-escuro .x-btn-wrap-default-toolbar-medium,
+body.tema-escuro .x-btn-wrap-default-toolbar-large,
+body.tema-escuro .x-btn-button-default-toolbar-small,
+body.tema-escuro .x-btn-button-default-toolbar-medium,
+body.tema-escuro .x-btn-button-default-toolbar-large {
+	background: transparent !important;
+	background-color: transparent !important;
+	background-image: none !important;
 }
 
 body.tema-escuro .x-btn-inner,
@@ -566,6 +558,7 @@ body.tema-escuro .x-btn-inner-default-toolbar-small,
 body.tema-escuro .x-btn-inner-default-toolbar-medium,
 body.tema-escuro .x-btn-inner-default-toolbar-large {
 	color: #e7edf5 !important;
+	text-shadow: none !important;
 }
 
 body.tema-escuro .x-btn-over,
@@ -579,6 +572,16 @@ body.tema-escuro .x-btn-default-toolbar-large-over {
 	background-color: #273346 !important;
 	background-image: none !important;
 	border-color: #435169 !important;
+}
+
+body.tema-escuro .x-btn-focus,
+body.tema-escuro .x-btn-default-small-focus,
+body.tema-escuro .x-btn-default-medium-focus,
+body.tema-escuro .x-btn-default-large-focus {
+	background: #273346 !important;
+	background-color: #273346 !important;
+	background-image: none !important;
+	border-color: #526680 !important;
 }
 
 body.tema-escuro .x-btn-pressed,
@@ -609,11 +612,57 @@ body.tema-escuro .x-btn-default-large-disabled {
    Modo escuro - ícones dos TUniSpeedButton
    ============================================================ */
 
-body.tema-escuro .x-btn-icon-el {
+body.tema-escuro .x-btn-icon-el,
+body.tema-escuro .x-btn-icon-el-default-small,
+body.tema-escuro .x-btn-icon-el-default-medium,
+body.tema-escuro .x-btn-icon-el-default-large,
+body.tema-escuro .x-btn-icon-el-default-toolbar-small {
 	opacity: 0.90;
 }
 
 body.tema-escuro .x-btn-default-small .x-btn-icon-el,
+body.tema-escuro .x-btn-default-medium .x-btn-icon-el,
+body.tema-escuro .x-btn-default-large .x-btn-icon-el,
 body.tema-escuro .x-btn-default-toolbar-small .x-btn-icon-el {
 	filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   Modo escuro - componentes coloridos já existentes
+   Mantido depois dos botões genéricos para preservar suas cores
+   ============================================================ */
+
+body.tema-escuro .btnAzul {
+	background: #245f8a !important;
+	background-image: linear-gradient(to bottom, #245f8a, #194765) !important;
+	border-color: #245f8a !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnComum {
+	background: #6457d6 !important;
+	background-image: none !important;
+	border-color: #6457d6 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnMenuLateral {
+	background: #352e29 !important;
+	background-image: none !important;
+	border-color: #352e29 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnTeclado {
+	background: #0967a7 !important;
+	background-image: none !important;
+	border-color: #0967a7 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnMenu {
+	background: #273142 !important;
+	background-image: none !important;
+	border-color: #273142 !important;
+	color: #ffffff !important;
 }
