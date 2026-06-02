@@ -203,3 +203,373 @@ td[id$="_id_td"] * {
 	-webkit-transition: background 0.5s ease-in-out;
 	transition: background 0.5s ease-in-out;
 }
+/* ============================================================
+   Alternador de tema - Boreal
+   ============================================================ */
+
+.containerAlternadorTema,
+.containerAlternadorTema .x-panel-body {
+	background: transparent !important;
+	border: 0 !important;
+	overflow: visible !important;
+}
+
+.alternador-tema {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 72px;
+	height: 36px;
+	padding: 0 9px;
+	border: 0;
+	border-radius: 20px;
+	background: linear-gradient(135deg, #f8d776, #f3b85c);
+	box-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.50),
+		0 2px 8px rgba(15, 23, 42, 0.16);
+	cursor: pointer;
+	outline: none;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	user-select: none;
+	transition:
+		background 0.28s ease,
+		box-shadow 0.28s ease;
+}
+
+.alternador-tema:focus-visible {
+	box-shadow:
+		0 0 0 3px rgba(52, 152, 219, 0.28),
+		0 2px 8px rgba(15, 23, 42, 0.16);
+}
+
+.alternador-tema-icone {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	font-size: 16px;
+	line-height: 18px;
+	transition:
+		color 0.28s ease,
+		opacity 0.28s ease,
+		transform 0.28s ease;
+}
+
+.alternador-tema-sol {
+	color: #c98714;
+	opacity: 1;
+}
+
+.alternador-tema-lua {
+	color: rgba(255, 255, 255, 0.65);
+	opacity: 0.72;
+}
+
+.alternador-tema-bolinha {
+	position: absolute;
+	z-index: 2;
+	top: 4px;
+	left: 4px;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	background: #ffffff;
+	box-shadow:
+		0 2px 7px rgba(15, 23, 42, 0.22),
+		inset 0 1px 1px rgba(255, 255, 255, 0.70);
+	transform: translateX(0);
+	transition:
+		transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+		background 0.28s ease;
+}
+
+body.tema-escuro .alternador-tema {
+	background: linear-gradient(135deg, #202a40, #364261);
+	box-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.10),
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.tema-escuro .alternador-tema-sol {
+	color: rgba(255, 255, 255, 0.52);
+	opacity: 0.65;
+}
+
+body.tema-escuro .alternador-tema-lua {
+	color: #f2e6a8;
+	opacity: 1;
+	transform: rotate(-8deg);
+}
+
+body.tema-escuro .alternador-tema-bolinha {
+	background: #f8fafc;
+	transform: translateX(36px);
+}
+
+/* ============================================================
+   Modo escuro - estrutura geral
+   ============================================================ */
+
+body.tema-escuro,
+body.tema-escuro .x-body {
+	background-color: #0f141d !important;
+	color: #e7edf5 !important;
+	color-scheme: dark;
+}
+
+body.tema-escuro .panCabecalho {
+	background-color: #171d27 !important;
+	box-shadow: 0 1px 1px #090c12 !important;
+}
+
+body.tema-escuro .panCorpo,
+body.tema-escuro .PageControl {
+	background-color: #0f141d !important;
+	border-color: #273142 !important;
+	box-shadow: 0 0 0 1px #273142 !important;
+}
+
+body.tema-escuro .arrPanKPI,
+body.tema-escuro .panData,
+body.tema-escuro .Grid {
+	border-color: #273142 !important;
+	box-shadow: 0 0 0 1px #273142 !important;
+}
+
+/* ============================================================
+   Panels e textos
+   ============================================================ */
+
+body.tema-escuro .x-panel,
+body.tema-escuro .x-panel-body,
+body.tema-escuro .x-container {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-label,
+body.tema-escuro .x-form-item-label,
+body.tema-escuro .x-form-display-field,
+body.tema-escuro td[id$="_id_td"],
+body.tema-escuro td[id$="_id_td"] * {
+	color: #e7edf5 !important;
+}
+
+/* O container do switch precisa continuar transparente */
+body.tema-escuro .containerAlternadorTema,
+body.tema-escuro .containerAlternadorTema .x-panel-body {
+	background: transparent !important;
+	border: 0 !important;
+}
+
+/* ============================================================
+   Inputs, combos e lookup
+   ============================================================ */
+
+body.tema-escuro .x-form-text,
+body.tema-escuro .x-form-field,
+body.tema-escuro .x-form-trigger-wrap {
+	background-color: #171d27 !important;
+	color: #e7edf5 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-form-text::placeholder {
+	color: #8b97a8 !important;
+}
+
+body.tema-escuro .x-form-trigger {
+	background-color: #1c2430 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-boundlist {
+	background-color: #171d27 !important;
+	border-color: #303b4c !important;
+	box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34) !important;
+}
+
+body.tema-escuro .x-boundlist-item {
+	background-color: #171d27 !important;
+	color: #e7edf5 !important;
+	border-color: transparent !important;
+}
+
+body.tema-escuro .x-boundlist-item-over,
+body.tema-escuro .x-boundlist-selected {
+	background-color: #273346 !important;
+	color: #ffffff !important;
+}
+
+/* ============================================================
+   Grid
+   ============================================================ */
+
+body.tema-escuro .x-grid,
+body.tema-escuro .x-grid-body,
+body.tema-escuro .x-grid-view {
+	background-color: #121822 !important;
+	border-color: #273142 !important;
+}
+
+body.tema-escuro .x-column-header,
+body.tema-escuro .x-column-header-inner {
+	background-color: #1b2330 !important;
+	color: #e7edf5 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-column-header-text {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-grid-item,
+body.tema-escuro .x-grid-row,
+body.tema-escuro .x-grid-cell {
+	background-color: #121822 !important;
+	color: #e7edf5 !important;
+	border-color: #222c3b !important;
+}
+
+body.tema-escuro .x-grid-cell-inner {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-grid-item-over .x-grid-cell,
+body.tema-escuro .x-grid-row-over .x-grid-cell {
+	background-color: #1e2938 !important;
+}
+
+body.tema-escuro .x-grid-item-selected .x-grid-cell,
+body.tema-escuro .x-grid-row-selected .x-grid-cell {
+	background-color: #29384d !important;
+	color: #ffffff !important;
+}
+
+/* ============================================================
+   Abas, menus e janelas
+   ============================================================ */
+
+body.tema-escuro .x-tab-bar,
+body.tema-escuro .x-toolbar {
+	background-color: #171d27 !important;
+	border-color: #273142 !important;
+}
+
+body.tema-escuro .x-tab {
+	background-color: #1b2330 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-tab-inner {
+	color: #cdd6e3 !important;
+}
+
+body.tema-escuro .x-tab-active {
+	background-color: #29384d !important;
+}
+
+body.tema-escuro .x-tab-active .x-tab-inner {
+	color: #ffffff !important;
+}
+
+body.tema-escuro .x-menu {
+	background-color: #171d27 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-menu-item,
+body.tema-escuro .x-menu-item-text {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-menu-item-active {
+	background-color: #273346 !important;
+}
+
+body.tema-escuro .x-window,
+body.tema-escuro .x-window-body {
+	background-color: #171d27 !important;
+	color: #e7edf5 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-window-header {
+	background-color: #1b2330 !important;
+	color: #ffffff !important;
+	border-color: #303b4c !important;
+}
+
+/* ============================================================
+   Calendário
+   ============================================================ */
+
+body.tema-escuro .x-datepicker,
+body.tema-escuro .x-datepicker-inner {
+	background-color: #171d27 !important;
+	color: #e7edf5 !important;
+	border-color: #303b4c !important;
+}
+
+body.tema-escuro .x-datepicker-header {
+	background-color: #1b2330 !important;
+}
+
+body.tema-escuro .x-datepicker-cell,
+body.tema-escuro .x-datepicker-date {
+	color: #e7edf5 !important;
+}
+
+body.tema-escuro .x-datepicker-active:hover,
+body.tema-escuro .x-datepicker-selected {
+	background-color: #29384d !important;
+}
+
+/* ============================================================
+   Máscara de carregamento
+   ============================================================ */
+
+body.tema-escuro .x-mask {
+	background-color: #070a10 !important;
+	opacity: 0.62 !important;
+}
+
+body.tema-escuro .x-mask-msg,
+body.tema-escuro .x-mask-msg-inner {
+	background-color: #1b2330 !important;
+	color: #ffffff !important;
+	border-color: #303b4c !important;
+}
+
+/* ============================================================
+   Componentes coloridos já existentes
+   ============================================================ */
+
+body.tema-escuro .btnMenuLateral {
+	background: #352e29 !important;
+	border-color: #352e29 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnMenu {
+	background: #273142 !important;
+	border-color: #273142 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnComum {
+	background: #6457d6 !important;
+	border-color: #6457d6 !important;
+	color: #ffffff !important;
+}
+
+body.tema-escuro .btnTeclado {
+	background: #0967a7 !important;
+	border-color: #0967a7 !important;
+	color: #ffffff !important;
+}
