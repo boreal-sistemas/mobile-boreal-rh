@@ -938,3 +938,91 @@ body.tema-escuro .btnMenu {
 	border-color: #273142 !important;
 	color: #ffffff !important;
 }
+/* ============================================================
+   Alternador de tema
+   ============================================================ */
+
+.alternador-tema {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 62px;
+	height: 30px;
+	padding: 0 8px;
+	border: 0;
+	border-radius: 18px;
+	background: linear-gradient(135deg, #f8d776, #f3b85c);
+	box-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.45),
+		0 2px 7px rgba(15, 23, 42, 0.20);
+	cursor: pointer;
+	box-sizing: border-box;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	touch-action: manipulation;
+	transition:
+		background 0.25s ease,
+		box-shadow 0.25s ease;
+}
+
+.alternador-tema-icone {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	line-height: 14px;
+	transition:
+		color 0.25s ease,
+		opacity 0.25s ease;
+}
+
+.alternador-tema-sol {
+	color: #b97811;
+	opacity: 1;
+}
+
+.alternador-tema-lua {
+	color: rgba(255, 255, 255, 0.70);
+	opacity: 0.70;
+}
+
+.alternador-tema-bolinha {
+	position: absolute;
+	z-index: 2;
+	top: 3px;
+	left: 3px;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: #ffffff;
+	box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
+	transform: translateX(0);
+	transition: transform 0.27s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body.tema-escuro .alternador-tema {
+	background: linear-gradient(135deg, #202a40, #364261);
+	box-shadow:
+		inset 0 1px 2px rgba(255, 255, 255, 0.10),
+		0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+body.tema-escuro .alternador-tema-sol {
+	color: rgba(255, 255, 255, 0.48);
+	opacity: 0.65;
+}
+
+body.tema-escuro .alternador-tema-lua {
+	color: #f2e6a8;
+	opacity: 1;
+}
+
+body.tema-escuro .alternador-tema-bolinha {
+	transform: translateX(32px);
+}
