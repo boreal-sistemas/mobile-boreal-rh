@@ -1026,3 +1026,132 @@ body.tema-escuro .alternador-tema-lua {
 body.tema-escuro .alternador-tema-bolinha {
 	transform: translateX(32px);
 }
+/* ============================================================
+   Estado vazio global das grids
+   ============================================================ */
+
+.x-grid-view {
+	position: relative !important;
+}
+
+.x-grid-empty {
+	position: absolute !important;
+	top: 0 !important;
+	right: 0 !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	width: auto !important;
+	height: auto !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	background: #ffffff !important;
+	color: #74707f !important;
+	pointer-events: none !important;
+}
+
+.boreal-grid-vazia {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	min-height: 150px;
+	padding: 24px;
+	box-sizing: border-box;
+	text-align: center;
+	font-family: 'Inter', Arial, sans-serif !important;
+	animation: boreal-grid-vazia-entrada 0.22s ease-out;
+}
+
+.boreal-grid-vazia-icone {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70px;
+	height: 70px;
+	margin-bottom: 16px;
+	border: 1px solid #ded6f4;
+	border-radius: 24px;
+	background:
+		linear-gradient(
+			145deg,
+			#faf8ff,
+			#eee9fb
+		);
+	box-shadow:
+		0 8px 22px rgba(65, 42, 123, 0.10),
+		inset 0 1px 0 rgba(255, 255, 255, 0.90);
+}
+
+.boreal-grid-vazia-icone svg {
+	width: 35px;
+	height: 35px;
+	fill: none;
+	stroke: #4c347f;
+	stroke-width: 1.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.boreal-grid-vazia-titulo {
+	margin-bottom: 6px;
+	color: #30206b;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.boreal-grid-vazia-texto {
+	max-width: 420px;
+	color: #74707f;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 19px;
+}
+
+@keyframes boreal-grid-vazia-entrada {
+	from {
+		opacity: 0;
+		transform: translateY(5px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* ============================================================
+   Estado vazio das grids - modo escuro
+   ============================================================ */
+
+body.tema-escuro .x-grid-empty {
+	background: #121822 !important;
+	color: #98a2b3 !important;
+}
+
+body.tema-escuro .boreal-grid-vazia-icone {
+	border-color: rgba(154, 125, 231, 0.28);
+	background:
+		linear-gradient(
+			145deg,
+			rgba(78, 57, 139, 0.35),
+			rgba(28, 35, 49, 0.85)
+		);
+	box-shadow:
+		0 10px 26px rgba(0, 0, 0, 0.26),
+		inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+body.tema-escuro .boreal-grid-vazia-icone svg {
+	stroke: #bda8f2;
+}
+
+body.tema-escuro .boreal-grid-vazia-titulo {
+	color: #eee9ff;
+}
+
+body.tema-escuro .boreal-grid-vazia-texto {
+	color: #98a2b3;
+}
