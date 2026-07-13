@@ -1028,94 +1028,123 @@ body.tema-escuro .alternador-tema-bolinha {
 }
 
 /* ============================================================
-   Estado vazio global de todas as grids
+   Estado vazio global das grids
 
-   Funciona somente com CSS:
-   - não depende de ConfigurarGridsPersistentes;
-   - não depende de emptyText do ExtJS;
-   - aparece antes ou depois de filtrar;
-   - neutraliza o HTML/SVG antigo do teste anterior.
+   O conteúdo é fornecido pelo emptyText nativo do ExtJS.
+   Este CSS cuida somente da aparência.
    ============================================================ */
 
-/* Neutraliza completamente a implementação antiga. */
-.x-grid-empty,
-.boreal-grid-vazia,
-.boreal-grid-vazia svg {
-	display: none !important;
-	width: 0 !important;
-	height: 0 !important;
-	min-width: 0 !important;
-	min-height: 0 !important;
-	max-width: 0 !important;
-	max-height: 0 !important;
-	overflow: hidden !important;
-	visibility: hidden !important;
-}
-
-/* A view vira a referência para centralizar o estado vazio. */
 .x-grid-view {
 	position: relative !important;
 }
 
-/*
-   Quando a view não possui nenhuma linha .x-grid-item,
-   o container interno passa a ocupar toda a área disponível.
-*/
-.x-grid-view:not(:has(.x-grid-item)) .x-grid-item-container {
-	position: static !important;
-	display: block !important;
-	width: 100% !important;
-	height: 100% !important;
-	min-height: 150px !important;
-	overflow: visible !important;
+.x-grid-empty {
+	position: absolute !important;
+	inset: 0 !important;
+	z-index: 4 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: auto !important;
+	height: auto !important;
+	min-width: 0 !important;
+	min-height: 0 !important;
+	margin: 0 !important;
+	padding: 20px !important;
+	box-sizing: border-box !important;
+	overflow: hidden !important;
+	background: #ffffff !important;
+	color: #74707f !important;
+	text-align: center !important;
+	white-space: normal !important;
+	pointer-events: none !important;
 }
 
-/* Cartão/ícone central. */
-.x-grid-view:not(:has(.x-grid-item))::before {
-	content: '' !important;
-	position: absolute !important;
-	z-index: 5 !important;
-	top: calc(50% - 62px) !important;
-	left: 50% !important;
+.x-grid-empty .boreal-grid-vazia {
+	position: static !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: min(100%, 520px) !important;
+	height: auto !important;
+	min-width: 0 !important;
+	min-height: 0 !important;
+	margin: 0 auto !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	text-align: center !important;
+	font-family: 'Inter', Arial, sans-serif !important;
+	animation: boreal-grid-vazia-entrada 0.22s ease-out;
+}
+
+.x-grid-empty .boreal-grid-vazia-icone {
+	position: relative !important;
+	flex: 0 0 68px !important;
+	display: block !important;
 	width: 68px !important;
 	height: 68px !important;
 	min-width: 68px !important;
 	min-height: 68px !important;
 	max-width: 68px !important;
 	max-height: 68px !important;
-	margin: 0 !important;
+	margin: 0 0 16px 0 !important;
 	padding: 0 !important;
 	border: 1px solid #ded6f4 !important;
 	border-radius: 22px !important;
 	box-sizing: border-box !important;
+	overflow: hidden !important;
 	background-color: #f4f0fc !important;
 	background-image:
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234c347f' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E"),
-		linear-gradient(145deg, #faf8ff, #eee9fb) !important;
-	background-repeat: no-repeat, no-repeat !important;
-	background-position: center, center !important;
-	background-size: 34px 34px, 100% 100% !important;
+		linear-gradient(
+			145deg,
+			#faf8ff,
+			#eee9fb
+		) !important;
 	box-shadow:
 		0 8px 22px rgba(65, 42, 123, 0.10),
 		inset 0 1px 0 rgba(255, 255, 255, 0.90) !important;
-	transform: translateX(-50%) !important;
-	pointer-events: none !important;
-	animation: boreal-grid-vazia-entrada 0.22s ease-out;
 }
 
-/* Título. */
-.x-grid-view:not(:has(.x-grid-item))
-.x-grid-item-container::before {
-	content: 'Nada por aqui ainda' !important;
+.x-grid-empty .boreal-grid-vazia-icone::before {
+	content: '' !important;
 	position: absolute !important;
-	z-index: 5 !important;
-	top: calc(50% + 20px) !important;
-	left: 50% !important;
-	width: calc(100% - 48px) !important;
-	max-width: 520px !important;
+	top: 18px !important;
+	left: 17px !important;
+	width: 26px !important;
+	height: 26px !important;
 	margin: 0 !important;
 	padding: 0 !important;
+	border: 2px solid #4c347f !important;
+	border-radius: 50% !important;
 	box-sizing: border-box !important;
+	background: transparent !important;
+}
+
+.x-grid-empty .boreal-grid-vazia-icone::after {
+	content: '' !important;
+	position: absolute !important;
+	top: 42px !important;
+	left: 41px !important;
+	width: 13px !important;
+	height: 2px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	border-radius: 2px !important;
+	box-sizing: border-box !important;
+	background: #4c347f !important;
+	transform: rotate(45deg) !important;
+	transform-origin: left center !important;
+}
+
+.x-grid-empty .boreal-grid-vazia-titulo {
+	position: static !important;
+	display: block !important;
+	width: 100% !important;
+	height: auto !important;
+	margin: 0 0 6px 0 !important;
+	padding: 0 !important;
 	color: #30206b !important;
 	font-family: 'Inter', Arial, sans-serif !important;
 	font-size: 18px !important;
@@ -1123,24 +1152,15 @@ body.tema-escuro .alternador-tema-bolinha {
 	line-height: 24px !important;
 	text-align: center !important;
 	white-space: normal !important;
-	transform: translateX(-50%) !important;
-	pointer-events: none !important;
-	animation: boreal-grid-vazia-entrada 0.22s ease-out;
 }
 
-/* Texto auxiliar. */
-.x-grid-view:not(:has(.x-grid-item))
-.x-grid-item-container::after {
-	content: 'Não encontramos informações.' !important;
-	position: absolute !important;
-	z-index: 5 !important;
-	top: calc(50% + 51px) !important;
-	left: 50% !important;
-	width: calc(100% - 48px) !important;
-	max-width: 520px !important;
+.x-grid-empty .boreal-grid-vazia-texto {
+	position: static !important;
+	display: block !important;
+	width: 100% !important;
+	height: auto !important;
 	margin: 0 !important;
 	padding: 0 !important;
-	box-sizing: border-box !important;
 	color: #74707f !important;
 	font-family: 'Inter', Arial, sans-serif !important;
 	font-size: 13px !important;
@@ -1148,20 +1168,17 @@ body.tema-escuro .alternador-tema-bolinha {
 	line-height: 19px !important;
 	text-align: center !important;
 	white-space: normal !important;
-	transform: translateX(-50%) !important;
-	pointer-events: none !important;
-	animation: boreal-grid-vazia-entrada 0.22s ease-out;
 }
 
 @keyframes boreal-grid-vazia-entrada {
 	from {
 		opacity: 0;
-		transform: translate(-50%, 5px);
+		transform: translateY(5px);
 	}
 
 	to {
 		opacity: 1;
-		transform: translate(-50%, 0);
+		transform: translateY(0);
 	}
 }
 
@@ -1169,12 +1186,16 @@ body.tema-escuro .alternador-tema-bolinha {
    Estado vazio global das grids - modo escuro
    ============================================================ */
 
+body.tema-escuro .x-grid-empty {
+	background: #121822 !important;
+	color: #98a2b3 !important;
+}
+
 body.tema-escuro
-.x-grid-view:not(:has(.x-grid-item))::before {
+.x-grid-empty .boreal-grid-vazia-icone {
 	border-color: rgba(154, 125, 231, 0.28) !important;
 	background-color: #242033 !important;
 	background-image:
-		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bda8f2' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.5 15.5 21 21'/%3E%3C/svg%3E"),
 		linear-gradient(
 			145deg,
 			rgba(78, 57, 139, 0.35),
@@ -1186,14 +1207,22 @@ body.tema-escuro
 }
 
 body.tema-escuro
-.x-grid-view:not(:has(.x-grid-item))
-.x-grid-item-container::before {
+.x-grid-empty .boreal-grid-vazia-icone::before {
+	border-color: #bda8f2 !important;
+}
+
+body.tema-escuro
+.x-grid-empty .boreal-grid-vazia-icone::after {
+	background: #bda8f2 !important;
+}
+
+body.tema-escuro
+.x-grid-empty .boreal-grid-vazia-titulo {
 	color: #eee9ff !important;
 }
 
 body.tema-escuro
-.x-grid-view:not(:has(.x-grid-item))
-.x-grid-item-container::after {
+.x-grid-empty .boreal-grid-vazia-texto {
 	color: #98a2b3 !important;
 }
 
