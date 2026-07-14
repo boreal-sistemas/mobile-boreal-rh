@@ -1226,3 +1226,63 @@ body.tema-escuro
 	color: #98a2b3 !important;
 }
 
+/* ============================================================
+   Comparativo Rastreador - botão flutuante da parte inferior
+   ============================================================ */
+
+.boreal-comparativo-toggle {
+	overflow: hidden !important;
+	border: 1px solid rgba(48, 32, 107, 0.20) !important;
+	border-radius: 11px !important;
+	background:
+		linear-gradient(
+			145deg,
+			#ffffff,
+			#f2effa
+		) !important;
+	box-shadow:
+		0 5px 15px rgba(35, 25, 76, 0.18),
+		inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+	transition:
+		transform 0.15s ease,
+		box-shadow 0.15s ease,
+		border-color 0.15s ease !important;
+}
+
+.boreal-comparativo-toggle:hover {
+	border-color: rgba(48, 32, 107, 0.38) !important;
+	box-shadow:
+		0 8px 20px rgba(35, 25, 76, 0.24),
+		inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+	transform: translateY(-1px);
+}
+
+.boreal-comparativo-toggle:active {
+	box-shadow:
+		0 3px 9px rgba(35, 25, 76, 0.18) !important;
+	transform: translateY(0);
+}
+
+.boreal-comparativo-toggle .x-btn-icon-el {
+	color: #30206b !important;
+	font-size: 16px !important;
+}
+
+body.tema-escuro .boreal-comparativo-toggle {
+	border-color: rgba(189, 168, 242, 0.25) !important;
+	background:
+		linear-gradient(
+			145deg,
+			#272238,
+			#181522
+		) !important;
+	box-shadow:
+		0 6px 18px rgba(0, 0, 0, 0.36),
+		inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+body.tema-escuro
+.boreal-comparativo-toggle .x-btn-icon-el {
+	color: #d6c9fa !important;
+}
+
