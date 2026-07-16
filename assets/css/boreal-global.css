@@ -1823,3 +1823,374 @@ body.tema-escuro .x-grid-body .boreal-grid-vazia {
 	background: #121822 !important;
 	color: #98a2b3 !important;
 }
+
+/* ============================================================
+   Skeleton global de carregamento
+
+   A primeira aplicação é no Acompanhamento Online.
+   Usa classes próprias e não modifica componentes do ExtJS.
+   ============================================================ */
+
+.boreal-skeleton-overlay {
+	position: absolute !important;
+	inset: 0 !important;
+	z-index: 20000 !important;
+
+	display: block !important;
+
+	width: auto !important;
+	height: auto !important;
+
+	margin: 0 !important;
+	padding: 18px !important;
+
+	box-sizing: border-box !important;
+	overflow: hidden !important;
+
+	background: #f5f6f9 !important;
+
+	opacity: 1;
+	pointer-events: all !important;
+
+	transition:
+		opacity 0.18s ease !important;
+}
+
+.boreal-skeleton-overlay.boreal-skeleton-saindo {
+	opacity: 0 !important;
+	pointer-events: none !important;
+}
+
+.boreal-skeleton-conteudo {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+
+	width: 100%;
+	height: 100%;
+
+	min-width: 0;
+	min-height: 0;
+
+	box-sizing: border-box;
+}
+
+.boreal-skeleton-identidade {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 16px;
+
+	min-height: 32px;
+}
+
+.boreal-skeleton-titulo-real {
+	color: #30206b;
+
+	font-family: 'Inter', Arial, sans-serif;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 28px;
+}
+
+.boreal-skeleton-status {
+	color: #7b8190;
+
+	font-family: 'Inter', Arial, sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 18px;
+}
+
+.boreal-skeleton-filtros,
+.boreal-skeleton-acoes {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+
+	min-width: 0;
+}
+
+.boreal-skeleton-pulso {
+	position: relative;
+
+	display: block;
+
+	height: 14px;
+
+	overflow: hidden;
+
+	border-radius: 6px;
+
+	background: #e1e4ea;
+}
+
+.boreal-skeleton-pulso::after {
+	content: '';
+
+	position: absolute;
+	inset: 0;
+
+	background:
+		linear-gradient(
+			90deg,
+			transparent,
+			rgba(255, 255, 255, 0.72),
+			transparent
+		);
+
+	transform: translateX(-100%);
+
+	animation:
+		boreal-skeleton-brilho
+		1.25s
+		infinite;
+}
+
+.boreal-skeleton-filtro,
+.boreal-skeleton-filtro-largo,
+.boreal-skeleton-filtro-curto,
+.boreal-skeleton-botao {
+	height: 36px;
+	border-radius: 8px;
+}
+
+.boreal-skeleton-filtro-largo {
+	width: 230px;
+}
+
+.boreal-skeleton-filtro {
+	width: 170px;
+}
+
+.boreal-skeleton-filtro-curto {
+	width: 130px;
+}
+
+.boreal-skeleton-botao {
+	width: 116px;
+}
+
+.boreal-skeleton-tabela {
+	flex: 1 1 auto;
+
+	display: flex;
+	flex-direction: column;
+
+	min-width: 0;
+	min-height: 230px;
+
+	overflow: hidden;
+
+	border: 1px solid rgba(72, 86, 111, 0.16);
+	border-radius: 9px;
+
+	background: #ffffff;
+
+	box-shadow:
+		0 3px 12px rgba(38, 48, 66, 0.08);
+}
+
+.boreal-skeleton-cabecalho,
+.boreal-skeleton-linha {
+	display: grid;
+
+	grid-template-columns:
+		50px
+		minmax(150px, 1.8fr)
+		minmax(100px, 1fr)
+		minmax(100px, 1fr)
+		minmax(100px, 1fr)
+		minmax(110px, 1fr);
+
+	align-items: center;
+	gap: 12px;
+
+	padding: 0 14px;
+
+	box-sizing: border-box;
+}
+
+.boreal-skeleton-cabecalho {
+	flex: 0 0 42px;
+
+	background: #eceef3;
+
+	border-bottom:
+		1px solid rgba(72, 86, 111, 0.12);
+}
+
+.boreal-skeleton-cabecalho span {
+	display: block;
+
+	height: 9px;
+
+	border-radius: 5px;
+
+	background: #cfd4dd;
+}
+
+.boreal-skeleton-linhas {
+	flex: 1 1 auto;
+
+	min-height: 0;
+
+	overflow: hidden;
+}
+
+.boreal-skeleton-linha {
+	height: 45px;
+
+	border-bottom:
+		1px solid rgba(72, 86, 111, 0.07);
+}
+
+.boreal-skeleton-linha:nth-child(even) {
+	background:
+		rgba(241, 243, 247, 0.52);
+}
+
+.boreal-skeleton-linha .boreal-skeleton-pulso {
+	width: 82%;
+	height: 10px;
+}
+
+.boreal-skeleton-linha
+.boreal-skeleton-pulso:first-child {
+	width: 26px;
+}
+
+@keyframes boreal-skeleton-brilho {
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+/* ============================================================
+   Skeleton - modo escuro
+   ============================================================ */
+
+body.tema-escuro .boreal-skeleton-overlay {
+	background: #0f141d !important;
+}
+
+body.tema-escuro .boreal-skeleton-titulo-real {
+	color: #eee9ff;
+}
+
+body.tema-escuro .boreal-skeleton-status {
+	color: #98a2b3;
+}
+
+body.tema-escuro .boreal-skeleton-pulso {
+	background: #252e3d;
+}
+
+body.tema-escuro
+.boreal-skeleton-pulso::after {
+	background:
+		linear-gradient(
+			90deg,
+			transparent,
+			rgba(154, 175, 205, 0.18),
+			transparent
+		);
+}
+
+body.tema-escuro .boreal-skeleton-tabela {
+	border-color: #273142;
+
+	background: #121822;
+
+	box-shadow:
+		0 6px 18px rgba(0, 0, 0, 0.24);
+}
+
+body.tema-escuro .boreal-skeleton-cabecalho {
+	background: #1b2330;
+
+	border-bottom-color: #303b4c;
+}
+
+body.tema-escuro
+.boreal-skeleton-cabecalho span {
+	background: #354155;
+}
+
+body.tema-escuro .boreal-skeleton-linha {
+	border-bottom-color: #222c3b;
+}
+
+body.tema-escuro
+.boreal-skeleton-linha:nth-child(even) {
+	background: rgba(22, 29, 40, 0.72);
+}
+
+/* ============================================================
+   Skeleton - telas menores
+   ============================================================ */
+
+@media (max-width: 700px) {
+	.boreal-skeleton-overlay {
+		padding: 12px !important;
+	}
+
+	.boreal-skeleton-conteudo {
+		gap: 11px;
+	}
+
+	.boreal-skeleton-identidade {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 2px;
+	}
+
+	.boreal-skeleton-titulo-real {
+		font-size: 19px;
+		line-height: 24px;
+	}
+
+	.boreal-skeleton-filtros {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		width: 100%;
+	}
+
+	.boreal-skeleton-filtro,
+	.boreal-skeleton-filtro-largo,
+	.boreal-skeleton-filtro-curto {
+		width: 100%;
+	}
+
+	.boreal-skeleton-acoes {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		width: 100%;
+	}
+
+	.boreal-skeleton-botao {
+		width: 100%;
+	}
+
+	.boreal-skeleton-cabecalho,
+	.boreal-skeleton-linha {
+		grid-template-columns:
+			36px
+			minmax(100px, 1.7fr)
+			minmax(70px, 1fr)
+			minmax(70px, 1fr);
+
+		gap: 8px;
+		padding: 0 9px;
+	}
+
+	.boreal-skeleton-cabecalho
+	span:nth-child(n + 5),
+	.boreal-skeleton-linha
+	span:nth-child(n + 5) {
+		display: none;
+	}
+}
