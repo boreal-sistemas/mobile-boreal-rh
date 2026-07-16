@@ -2314,3 +2314,120 @@ body.tema-escuro
 body.tema-escuro .boreal-comparativo-vazio {
 	color: #aaa0c7;
 }
+
+
+/* ============================================================
+   Acompanhamento 2.0 - fundo cinza azulado
+
+   Aplicado somente aos componentes marcados com a classe.
+   Não modifica outras telas do sistema.
+   ============================================================ */
+
+body:not(.tema-escuro)
+.boreal-acompanhamento-fundo {
+	background-color: #e4eaf1 !important;
+	background-image: none !important;
+}
+
+body:not(.tema-escuro)
+.boreal-acompanhamento-fundo
+> .x-panel-body {
+	background-color: #e4eaf1 !important;
+	background-image: none !important;
+}
+
+body:not(.tema-escuro)
+.boreal-acompanhamento-fundo
+> .x-panel-body
+> .x-autocontainer-innerCt {
+	background-color: #e4eaf1 !important;
+	background-image: none !important;
+}
+
+/* ============================================================
+   Comparativo Rastreador - superfície principal da timeline
+
+   Aplicar somente em:
+   sboComparativo.LayoutConfig.Cls = boreal-comparativo-superficie
+
+   Mantém a rolagem vertical quando faltar altura e nunca cria
+   rolagem horizontal.
+   ============================================================ */
+
+body:not(.tema-escuro)
+.boreal-comparativo-superficie {
+	overflow: hidden !important;
+	box-sizing: border-box !important;
+
+	border: 1px solid rgba(93, 111, 134, 0.22) !important;
+	border-radius: 8px !important;
+
+	background-color: #f8fafc !important;
+	background-image: none !important;
+}
+
+body:not(.tema-escuro)
+.boreal-comparativo-superficie > .x-panel-body {
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 7px !important;
+
+	background-color: #f8fafc !important;
+	background-image: none !important;
+}
+
+body:not(.tema-escuro)
+.boreal-comparativo-superficie
+> .x-panel-body
+> .x-autocontainer-innerCt {
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	box-sizing: border-box !important;
+
+	background-color: #f8fafc !important;
+	background-image: none !important;
+}
+
+body.tema-escuro
+.boreal-comparativo-superficie {
+	overflow: hidden !important;
+	box-sizing: border-box !important;
+
+	border: 1px solid #273142 !important;
+	border-radius: 8px !important;
+
+	background-color: #121822 !important;
+	background-image: none !important;
+}
+
+body.tema-escuro
+.boreal-comparativo-superficie > .x-panel-body {
+	overflow-x: hidden !important;
+	overflow-y: auto !important;
+
+	width: 100% !important;
+	max-width: 100% !important;
+	box-sizing: border-box !important;
+	border-radius: 7px !important;
+
+	background-color: #121822 !important;
+	background-image: none !important;
+}
+
+body.tema-escuro
+.boreal-comparativo-superficie
+> .x-panel-body
+> .x-autocontainer-innerCt {
+	width: 100% !important;
+	max-width: 100% !important;
+	min-width: 0 !important;
+	box-sizing: border-box !important;
+
+	background-color: #121822 !important;
+	background-image: none !important;
+}
