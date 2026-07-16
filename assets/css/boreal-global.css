@@ -2274,3 +2274,43 @@ body.tema-escuro
 	font-size: 11px !important;
 	font-weight: 600 !important;
 }
+
+/* ============================================================
+   Comparativo Rastreador - estado inicial vazio
+   ============================================================ */
+
+.boreal-comparativo-vazio {
+	position: absolute;
+	inset: 0;
+	z-index: 5;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+
+	box-sizing: border-box;
+	padding: 24px;
+
+	color: #73658f;
+	text-align: center;
+
+	pointer-events: none;
+}
+
+.boreal-comparativo-vazio strong {
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 18px;
+}
+
+.boreal-comparativo-vazio span {
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 17px;
+}
+
+body.tema-escuro .boreal-comparativo-vazio {
+	color: #aaa0c7;
+}
